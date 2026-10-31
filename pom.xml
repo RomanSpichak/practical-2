@@ -35,7 +35,7 @@
 
     <build>
         <!--suppress UnresolvedMavenProperty -->
-        <finalName>${project.artifactId}-${note}-${project.version}</finalName>
+        <finalName>${project.artifactId}-${note}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -51,9 +51,12 @@
 
     <profiles>
         <profile>
-            <id>fat</id>
+            <id>f</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
-                <note>FAT</note>
+                <note>f</note>
             </properties>
             <build>
                 <plugins>
@@ -83,9 +86,12 @@
         </profile>
 
         <profile>
-            <id>thin</id>
+            <id>t</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
             <properties>
-                <note>THIN</note>
+                <note>t</note>
             </properties>
             <build>
                 <plugins>
