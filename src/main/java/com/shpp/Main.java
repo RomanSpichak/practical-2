@@ -6,6 +6,7 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.util.Properties;
 
 
@@ -16,6 +17,7 @@ public class Main {
     public static void main(String[] args) {
 
         Properties properties = new ReadFile().getProperties();
+
         String userName = properties.getProperty("user-name");
         String format = System.getProperty("format", "json");
 
