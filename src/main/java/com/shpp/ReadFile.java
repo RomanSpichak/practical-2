@@ -10,38 +10,34 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
-public class LoadAppProperties {
+public class ReadFile {
 
-    private static final Logger logger = LoggerFactory.getLogger(LoadAppProperties.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ReadFile.class);
 
-    public String loadUserName() {
+    public Properties getProperties() {
 
         Properties properties = new Properties();
-
         java.io.File configurationFile = new java.io.File("application.properties");
-
         if (configurationFile.exists()) {
             try (java.io.FileReader reader = new FileReader(configurationFile, StandardCharsets.UTF_8)) {
                 properties.load(reader);
-                logger.info("Configuration successfully loaded from external file");
             } catch (java.io.IOException e) {
-                logger.error("Error reading external properties file", e);
+                LOGGER.error("Error reading external properties file", e);
             }
         } else {
             try (InputStream inputStream = Main.class.getClassLoader().getResourceAsStream("application.properties")) {
                 if (inputStream != null) {
-                    logger.debug("Internal application.properties file successfully loaded");
                     try (InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)) {
                         properties.load(inputStreamReader);
                     } catch (IOException e) {
-                        logger.error("Application.properties file not found: {}", e.getMessage());
+                        LOGGER.error("Application.properties file not found: {}", e.getMessage());
                     }
                 }
             } catch (IOException e) {
-                logger.error("Critical error reading internal configuration file: {}", e.getMessage());
+                LOGGER.error("Critical error reading internal configuration file: {}", e.getMessage());
             }
         }
-        return properties.getProperty("username");
+        return properties;
     }
 
 }
