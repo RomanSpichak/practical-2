@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Properties;
 
 
@@ -16,19 +17,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Properties properties = new ReadFile().getProperties();
+        Properties appProperties = new ReadFile().getAppProperties();
 
-        String userName = properties.getProperty("user-name");
-        String format = System.getProperty("format", "json");
+        String typeOfNumbers = System.getProperty("type", "int");
 
-        ObjectMapper mapper = "xml".equals(format) ? new XmlMapper() : new ObjectMapper();
-        String toConsole = "";
-        try {
-            toConsole = mapper.writeValueAsString("Привіт " + userName);
-        } catch (JsonProcessingException e) {
-            LOGGER.error("Error while serializing object to format: {}", format, e);
-        }
-        LOGGER.info(toConsole);
+
     }
 
+    
 }
