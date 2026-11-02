@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.Properties;
 
 public class ReadFile {
@@ -29,6 +30,12 @@ public class ReadFile {
             }
         }
         return properties;
+    }
+
+    public List<Number> getNumbers(String typeOfNumbers) {
+
+        Number number;
+        return null;
     }
 
 }
