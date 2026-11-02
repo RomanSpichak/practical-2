@@ -17,8 +17,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Properties appProperties = new ReadFile().getAppProperties();
-
         String typeOfNumbers = System.getProperty("type", "int");
 
 
