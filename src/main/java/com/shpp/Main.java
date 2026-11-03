@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
 
         String typeOfNumbers = System.getProperty("type", "int");
-        List<Number> numbers = new ReadFile().getNumbers(typeOfNumbers);
+        List<Number> numbers;
 
     }
 

@@ -5,8 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 public class ReadFile {
 
@@ -32,10 +31,10 @@ public class ReadFile {
         return properties;
     }
 
-    public List<Number> getNumbers(String typeOfNumbers) {
-
-        Number number;
-        return null;
+    public void makeHashmap() {
+        HashMap<String, Number> hashMap = new HashMap<>();
+        
     }
+
 
 }
