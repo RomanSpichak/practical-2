@@ -5,13 +5,16 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 public class ReadFile {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ReadFile.class);
 
-    public Properties getAppProperties() {
+    public HashMap<String, String> getAppProperties() {
+        HashMap<String, String>  appProperties = new HashMap<>();
         Properties properties = new Properties();
         java.io.File external = new java.io.File("application.properties");
         InputStream internal = Main.class.getClassLoader().getResourceAsStream("application.properties");
@@ -28,7 +31,13 @@ public class ReadFile {
                 LOGGER.error("Error reading internal properties file: {}", e.getMessage());
             }
         }
-        return properties;
+
+        for (Map.Entry<Object, Object> entry : properties.entrySet()) {
+            appProperties.put((String) entry.getKey(), (String) entry.getValue());
+        }
+
+        return appProperties;
     }
+
 
 }

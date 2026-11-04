@@ -15,10 +15,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Properties appProperties = new ReadFile().getAppProperties();
         HashMap<String, IChangeType> changeTypeMap = new ChangeType().getMap();
-        List<Number> numbersToTable = new NumbersToTable().getList(appProperties, changeTypeMap);
+        HashMap<String, String> appProperties = new ReadFile().getAppProperties();
 
+        System.out.println("appProperties " + appProperties);
+
+        List<Number> numbersToTable = new ArrayList<>();
     }
 
     

@@ -8,32 +8,32 @@ public class ChangeType {
         HashMap<String, IChangeType> map = new HashMap<>();
         map.putIfAbsent("short", new IChangeType() {
             @Override
-            public Number apply(Number number) {
-                return number.shortValue();
+            public Number apply(String number) {
+                return Short.parseShort(number);
             }
         });
         map.putIfAbsent("int", new IChangeType() {
             @Override
-            public Number apply(Number number) {
-                return number.intValue();
+            public Number apply(String number) {
+                return Integer.parseInt(number);
             }
         });
         map.putIfAbsent("double", new IChangeType() {
             @Override
-            public Number apply(Number number) {
-                return number.doubleValue();
+            public Number apply(String number) {
+                return Double.parseDouble(number);
             }
         });
         map.putIfAbsent("float", new IChangeType() {
             @Override
-            public Number apply(Number number) {
-                return number.floatValue();
+            public Number apply(String number) {
+                return Float.parseFloat(number);
             }
         });
         map.putIfAbsent("long", new IChangeType() {
             @Override
-            public Number apply(Number number) {
-                return number.longValue();
+            public Number apply(String number) {
+                return Long.parseLong(number);
             }
         });
         return map;
