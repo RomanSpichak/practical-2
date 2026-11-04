@@ -13,8 +13,7 @@ public class ReadFile {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ReadFile.class);
 
-    public HashMap<String, String> getAppProperties() {
-        HashMap<String, String>  appProperties = new HashMap<>();
+    public Properties getAppProperties() {
         Properties properties = new Properties();
         java.io.File external = new java.io.File("application.properties");
         InputStream internal = Main.class.getClassLoader().getResourceAsStream("application.properties");
@@ -32,11 +31,7 @@ public class ReadFile {
             }
         }
 
-        for (Map.Entry<Object, Object> entry : properties.entrySet()) {
-            appProperties.put((String) entry.getKey(), (String) entry.getValue());
-        }
-
-        return appProperties;
+        return properties;
     }
 
 
