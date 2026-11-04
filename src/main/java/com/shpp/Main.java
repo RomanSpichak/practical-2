@@ -26,7 +26,6 @@ public class Main {
         Properties properties = new ReadFile().getAppProperties();
 
 
-
     }
 
     
