@@ -15,7 +15,7 @@ public class MakeTable {
             list.add(minNumber);
             minNumber = minNumber + increment;
         }
-        System.out.println(" # " + list);
+        System.out.println("long " + list);
         list.forEach(row -> {
             List<Long> listRow = new ArrayList<>();
             list.forEach(col -> {
@@ -34,7 +34,7 @@ public class MakeTable {
             list.add(minNumber);
             minNumber = minNumber + increment;
         }
-        System.out.println(" # " + list);
+        System.out.println("float " + list);
         list.forEach(row -> {
             List<Float> listRow = new ArrayList<>();
             list.forEach(col -> {
@@ -53,7 +53,7 @@ public class MakeTable {
             list.add(minNumber);
             minNumber = minNumber + increment;
         }
-        System.out.println(" # " + list);
+        System.out.println("double " + list);
         list.forEach(row -> {
             List<Double> listRow = new ArrayList<>();
             list.forEach(col -> {
@@ -72,7 +72,7 @@ public class MakeTable {
             list.add(minNumber);
             minNumber = minNumber + increment;
         }
-        System.out.println(" # " + list);
+        System.out.println("int " + list);
         list.forEach(row -> {
             List<Integer> listRow = new ArrayList<>();
             list.forEach(col -> {

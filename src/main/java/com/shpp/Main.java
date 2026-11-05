@@ -12,7 +12,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         String type = System.getProperty("type", "int");
         Properties properties = new ReadFile().getAppProperties();
 
@@ -24,7 +23,5 @@ public class Main {
         }
 
     }
-
-
 
 }
