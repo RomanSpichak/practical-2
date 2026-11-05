@@ -14,6 +14,7 @@ public class Main {
 
         String type = System.getProperty("type", "int");
         Properties properties = new ReadFile().getAppProperties();
+        LOGGER.info("Application properties loaded: {}", properties);
 
         switch (type) {
             case "int": new MakeTable().getInteger(properties); break;

@@ -5,8 +5,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 
 public class ReadFile {
@@ -30,7 +28,6 @@ public class ReadFile {
                 LOGGER.error("Error reading internal properties file: {}", e.getMessage());
             }
         }
-
         return properties;
     }
 
