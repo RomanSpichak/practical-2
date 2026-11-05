@@ -20,7 +20,47 @@ public class Main {
 
         makeIntegerTable(properties);
         makeDoubleTable(properties);
+        makeFloatTable(properties);
+        makeLongTable(properties);
 
+    }
+
+    private static void makeLongTable(Properties properties) {
+        long minNumber = Long.parseLong(properties.getProperty("min-number"));
+        long maxNumber = Long.parseLong(properties.getProperty("max-number"));
+        long increment = Long.parseLong(properties.getProperty("increment"));
+        List<Long> list = new ArrayList<>();
+        while (maxNumber >= minNumber) {
+            list.add(minNumber);
+            minNumber = minNumber + increment;
+        }
+        System.out.println(" # " + list);
+        list.forEach(row -> {
+            List<Long> listRow = new ArrayList<>();
+            list.forEach(col -> {
+                listRow.add(row * col);
+            });
+            System.out.println("[" + row + "] " + listRow);
+        });
+    }
+
+    private static void makeFloatTable(Properties properties) {
+        float minNumber = Float.parseFloat(properties.getProperty("min-number"));
+        float maxNumber = Float.parseFloat(properties.getProperty("max-number"));
+        float increment = Float.parseFloat(properties.getProperty("increment"));
+        List<Float> list = new ArrayList<>();
+        while (maxNumber >= minNumber) {
+            list.add(minNumber);
+            minNumber = minNumber + increment;
+        }
+        System.out.println(" # " + list);
+        list.forEach(row -> {
+            List<Float> listRow = new ArrayList<>();
+            list.forEach(col -> {
+                listRow.add(row * col);
+            });
+            System.out.println("[" + row + "] " + listRow);
+        });
     }
 
     private static void makeDoubleTable(Properties properties) {
