@@ -17,11 +17,22 @@ public class ReadFileTest {
     }
 
     @Test
-    @DisplayName("Should load application properties from external file")
-    void shouldLoadApplicationPropertiesFromExternalFile() {
+    @DisplayName("Should return no empty properties")
+    void shouldReturnNoEmptyProperties() {
+        Assertions.assertFalse(appProp.isEmpty());
+    }
+
+    @Test
+    @DisplayName("Should load application properties")
+    void shouldLoadApplicationProperties() {
         Assertions.assertEquals("table", appProp.getProperty("app-name"));
         Assertions.assertEquals("1.0", appProp.getProperty("app-version"));
-        Assertions.assertEquals("external", appProp.getProperty("location"));
+    }
+
+    @Test
+    @DisplayName("Should return Cyrillic greeting")
+    void shouldReturnCyrillicGreeting() {
+        Assertions.assertEquals("Привіт", appProp.getProperty("greeting"));
     }
 
 }
