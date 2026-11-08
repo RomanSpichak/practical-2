@@ -21,10 +21,6 @@ public class MakeTableTest {
     void shouldReturnNoEmptyAppProp() {
         Assertions.assertFalse(properties.isEmpty());
     }
-    
-//    @Test
-//    @DisplayName("Should return Number Format Exception")
-//    void shouldReturnNumberFormatException() {
-//    }
+
 
 }
