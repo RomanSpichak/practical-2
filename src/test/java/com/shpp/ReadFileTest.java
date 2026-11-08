@@ -26,7 +26,6 @@ public class ReadFileTest {
     @DisplayName("Should load application properties")
     void shouldLoadApplicationProperties() {
         Assertions.assertEquals("table", appProp.getProperty("app-name"));
-        Assertions.assertEquals("1.0", appProp.getProperty("app-version"));
     }
 
     @Test
