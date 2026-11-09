@@ -1,5 +1,6 @@
 package com.shpp;
 
+import com.sun.jdi.Type;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -25,9 +26,15 @@ class MakeTableTest {
 
     @Test
     @DisplayName("Should return value more than zero")
-    void shouldReturnValueMoreThanZero() {
+    void shouldReturnIntegerValueMoreThanZero() {
         int increment = Integer.parseInt(properties.getProperty("increment"));
-        boolean moreThanZero = increment > 0;
-        assertTrue(moreThanZero, "Fail - more than zero ...");
+        assertTrue(increment > 0, "Fail - increment must be more than zero");
     }
+
+    @Test
+    @DisplayName("Should return integer value not char")
+    void shouldReturnIntegerValueNotChar() {
+
+    }
+
 }
