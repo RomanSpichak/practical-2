@@ -1,37 +1,40 @@
 package com.shpp;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
+import java.util.Map;
 import java.util.Properties;
 
 public class ReadFileTest {
 
-    private Properties appProp;
+    private Properties properties;
 
     @BeforeEach
     void init() {
-        appProp = new ReadFile().getAppProperties();
+        properties = new ReadFile().getAppProperties();
     }
 
     @Test
     @DisplayName("Should return no empty properties")
     void shouldReturnNoEmptyProperties() {
-        Assertions.assertFalse(appProp.isEmpty());
+        boolean appPropIsEmpty = properties.isEmpty();
+        Assertions.assertFalse(appPropIsEmpty);
     }
 
     @Test
     @DisplayName("Should load application properties")
     void shouldLoadApplicationProperties() {
-        Assertions.assertEquals("table", appProp.getProperty("app-name"));
+        String appName = properties.getProperty("app-name");
+        String expected = "table";
+        Assertions.assertEquals(expected, appName);
     }
 
     @Test
     @DisplayName("Should return Cyrillic greeting")
     void shouldReturnCyrillicGreeting() {
-        Assertions.assertEquals("Привіт", appProp.getProperty("greeting"));
+        String greeting = properties.getProperty("greeting");
+        String expected = "Привіт";
+        Assertions.assertEquals(expected, greeting);
     }
 
 }

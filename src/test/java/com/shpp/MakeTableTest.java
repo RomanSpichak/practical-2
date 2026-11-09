@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.IllegalFormatException;
+
 import java.util.Properties;
 
 public class MakeTableTest {
@@ -20,13 +20,15 @@ public class MakeTableTest {
     @Test
     @DisplayName("Should return no empty app.prop")
     void shouldReturnNoEmptyAppProp() {
-        Assertions.assertFalse(properties.isEmpty());
+        boolean appPropIsEmpty = properties.isEmpty();
+        Assertions.assertFalse(appPropIsEmpty);
     }
 
-    @Test
-    @DisplayName("???")
-    void test() {
-
-    }
-
+    /**
+     * TODO
+     *  Need test to:
+     *  - increment not equals 0
+     *  - min-max-increment properties has number format
+     */
+    
 }
