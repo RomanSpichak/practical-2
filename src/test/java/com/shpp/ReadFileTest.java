@@ -19,8 +19,8 @@ class ReadFileTest {
 
     @Test
     @DisplayName("Should return false if properties is not empty")
-    void shouldReturnTrueIfPropertiesIsEmpty() {
-        assertFalse(properties.isEmpty(), () -> "properties was empty: " + properties);
+    void shouldReturnFalseIfPropertiesIsNotEmpty() {
+        assertFalse(properties.isEmpty(), () -> "Fail - properties is empty ...");
     }
 
     @Test
