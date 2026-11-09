@@ -1,3 +1,0 @@
-init imac
-add branch junit make-table
-add new ssh-key, from imac
