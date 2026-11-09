@@ -31,10 +31,5 @@ class MakeTableTest {
         assertTrue(increment > 0, "Fail - increment must be more than zero");
     }
 
-    @Test
-    @DisplayName("Should return integer value not char")
-    void shouldReturnIntegerValueNotChar() {
-
-    }
 
 }
