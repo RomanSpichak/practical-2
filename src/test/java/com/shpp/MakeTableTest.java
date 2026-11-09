@@ -31,5 +31,4 @@ class MakeTableTest {
         assertTrue(increment > 0, "Fail - increment must be more than zero");
     }
 
-
 }
