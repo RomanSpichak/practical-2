@@ -1,4 +1,0 @@
-init
-init 2
-init 3
-init 4
