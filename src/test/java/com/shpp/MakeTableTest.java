@@ -1,6 +1,5 @@
 package com.shpp;
 
-import com.sun.jdi.Type;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -25,10 +24,36 @@ class MakeTableTest {
     }
 
     @Test
-    @DisplayName("Should return value more than zero")
+    @DisplayName("Should return true value more than zero")
     void shouldReturnIntegerValueMoreThanZero() {
-        int increment = Integer.parseInt(properties.getProperty("increment"));
-        assertTrue(increment > 0, "Fail - increment must be more than zero");
+        boolean isNotEqualsZero = Integer.parseInt(properties.getProperty("increment")) > 0;
+        assertTrue(isNotEqualsZero, "Fail - increment must be more than zero");
+    }
+
+    // method to checking value is digit
+    private boolean isDigit(int i) {
+        return i >= 0 && i <= 9;
+    }
+
+    @Test
+    @DisplayName("Should return true increment is digit")
+    void shouldReturnIncrementIsDigit() {
+        boolean incrementIsDigit = isDigit(Integer.parseInt(properties.getProperty("increment")));
+        assertTrue(incrementIsDigit, "Fail - increment value must be digit");
+    }
+
+    @Test
+    @DisplayName("Should return true min-number is digit")
+    void shouldReturnMinNumberIsDigit() {
+        boolean minNumberIsDigit = isDigit(Integer.parseInt(properties.getProperty("min-number")));
+        assertTrue(minNumberIsDigit, "Fail - min-number value must be digit");
+    }
+
+    @Test
+    @DisplayName("Should return true max-number is digit")
+    void shouldReturnMaxNumberIsDigit() {
+        boolean maxNumberIsDigit = isDigit(Integer.parseInt(properties.getProperty("max-number")));
+        assertTrue(maxNumberIsDigit, "Fail - max-number value must be digit");
     }
 
 }
