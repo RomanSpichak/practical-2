@@ -26,8 +26,8 @@ class MakeTableTest {
     @Test
     @DisplayName("Should return true value more than zero")
     void shouldReturnIntegerValueMoreThanZero() {
-        boolean isNotEqualsZero = Integer.parseInt(properties.getProperty("increment")) > 0;
-        assertTrue(isNotEqualsZero, "Fail - increment must be more than zero");
+        boolean isMoreThanZero = Integer.parseInt(properties.getProperty("increment")) > 0;
+        assertTrue(isMoreThanZero, "Fail - increment must be more than zero");
     }
 
     // method to checking value is digit
