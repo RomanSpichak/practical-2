@@ -3,6 +3,8 @@ package com.shpp;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
 
@@ -10,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MakeTableTest {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(MakeTableTest.class);
     private Properties properties;
 
     @BeforeEach
@@ -31,28 +34,35 @@ class MakeTableTest {
     }
 
     // method to checking value is digit
-    private boolean isDigit(int i) {
-        return i >= 0 && i <= 9;
+    private boolean isDigit(Properties property, String propertyName) {
+        boolean result = false;
+        try {
+            int number = Integer.parseInt(property.getProperty(propertyName));
+            result = true;
+        } catch (NumberFormatException e) {
+            LOGGER.error("Fail - must be a number {}", e.getMessage());
+        }
+        return result;
     }
 
     @Test
     @DisplayName("Should return true increment is digit")
     void shouldReturnIncrementIsDigit() {
-        boolean incrementIsDigit = isDigit(Integer.parseInt(properties.getProperty("increment")));
+        boolean incrementIsDigit = isDigit(properties, "increment");
         assertTrue(incrementIsDigit, "Fail - increment value must be digit");
     }
 
     @Test
     @DisplayName("Should return true min.number is digit")
     void shouldReturnMinNumberIsDigit() {
-        boolean minNumberIsDigit = isDigit(Integer.parseInt(properties.getProperty("min.number")));
+        boolean minNumberIsDigit = isDigit(properties, "min.number");
         assertTrue(minNumberIsDigit, "Fail - min-number value must be digit");
     }
 
     @Test
     @DisplayName("Should return true max.number is digit")
     void shouldReturnMaxNumberIsDigit() {
-        boolean maxNumberIsDigit = isDigit(Integer.parseInt(properties.getProperty("max.number")));
+        boolean maxNumberIsDigit = isDigit(properties, "max.number");
         assertTrue(maxNumberIsDigit, "Fail - max-number value must be digit");
     }
 

@@ -18,12 +18,14 @@ public class ReadFile {
         if (external.exists()) {
             try {
                 properties.load(new FileReader(external, StandardCharsets.UTF_8));
+                LOGGER.info("Application properties loaded from external file");
             } catch (IOException e) {
                 LOGGER.error("Error reading external properties file: {}", e.getMessage());
             }
         } else if (internal != null) {
             try {
                 properties.load(new InputStreamReader(internal, StandardCharsets.UTF_8));
+                LOGGER.info("Application properties loaded from internal file");
             } catch (IOException e) {
                 LOGGER.error("Error reading internal properties file: {}", e.getMessage());
             }

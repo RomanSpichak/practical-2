@@ -17,33 +17,27 @@ public class Main {
     public static void main(String[] args) {
 
         LOGGER.info("Application -= table =- Started");
-        String type = System.getProperty("type", "int");
+
         Properties properties = new ReadFile().getAppProperties();
-        LOGGER.info("Application properties loaded");
-
         String userName = properties.getProperty("user.name");
+        LOGGER.info("user name loaded = {}", userName);
+
         String format = System.getProperty("format", "json");
-        LOGGER.info("user.name loaded = {}", userName);
         LOGGER.info("format loaded = {}", format);
+        String type = System.getProperty("type", "int");
+        LOGGER.info("type loaded = {}", type);
 
-        ObjectMapper mapper = format.equals("xml") ?
-                new XmlMapper().enable(SerializationFeature.INDENT_OUTPUT):
-                new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
-        String output = "";
-        try {
-            output = mapper.writeValueAsString(" Hello " + userName + " ! ");
-        }catch (Exception e){
-            System.err.println(e.getMessage());
+        String greeting = new MakeGreeting().getGreeting(userName, format);
+        LOGGER.info("greeting: {}", greeting);
+
+        switch (type) {
+            case "int": new MakeTable().getInteger(properties); break;
+            case "double": new MakeTable().getDouble(properties);break;
+            case "float": new MakeTable().getFloat(properties); break;
+            case "long": new MakeTable().getLong(properties); break;
         }
-        LOGGER.info("output => {}", output);
 
-//        switch (type) {
-//            case "int": new MakeTable().getInteger(properties); break;
-//            case "double": new MakeTable().getDouble(properties);break;
-//            case "float": new MakeTable().getFloat(properties); break;
-//            case "long": new MakeTable().getLong(properties); break;
-//        }
-
+        LOGGER.info("Application -= table =- Ended");
     }
 
 }

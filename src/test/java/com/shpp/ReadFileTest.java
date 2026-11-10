@@ -26,7 +26,7 @@ class ReadFileTest {
     @Test
     @DisplayName("Should return application name = table")
     void shouldReturnApplicationNameTable() {
-        String appName = properties.getProperty("app-name");
+        String appName = properties.getProperty("app.name");
         assertEquals("table", appName, () -> "Fail - application name ...");
     }
 
