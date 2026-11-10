@@ -8,8 +8,8 @@ public class MakeTable {
 
     public void getLong(Properties properties) {
         if (properties != null) {
-            long minNumber = Long.parseLong(properties.getProperty("min-number"));
-            long maxNumber = Long.parseLong(properties.getProperty("max-number"));
+            long minNumber = Long.parseLong(properties.getProperty("min.number"));
+            long maxNumber = Long.parseLong(properties.getProperty("max.number"));
             long increment = Long.parseLong(properties.getProperty("increment"));
             List<Long> list = new ArrayList<>();
             while (maxNumber >= minNumber) {
@@ -29,8 +29,8 @@ public class MakeTable {
 
     public void getFloat(Properties properties) {
         if (properties != null) {
-            float minNumber = Float.parseFloat(properties.getProperty("min-number"));
-            float maxNumber = Float.parseFloat(properties.getProperty("max-number"));
+            float minNumber = Float.parseFloat(properties.getProperty("min.number"));
+            float maxNumber = Float.parseFloat(properties.getProperty("max.number"));
             float increment = Float.parseFloat(properties.getProperty("increment"));
             List<Float> list = new ArrayList<>();
             while (maxNumber >= minNumber) {
@@ -50,8 +50,8 @@ public class MakeTable {
 
     public void getDouble(Properties properties) {
         if (properties != null) {
-            double minNumber = Double.parseDouble(properties.getProperty("min-number"));
-            double maxNumber = Double.parseDouble(properties.getProperty("max-number"));
+            double minNumber = Double.parseDouble(properties.getProperty("min.number"));
+            double maxNumber = Double.parseDouble(properties.getProperty("max.number"));
             double increment = Double.parseDouble(properties.getProperty("increment"));
             List<Double> list = new ArrayList<>();
             while (maxNumber >= minNumber) {
@@ -72,8 +72,8 @@ public class MakeTable {
 
     public void getInteger(Properties properties) {
         if (properties != null) {
-            int minNumber = Integer.parseInt(properties.getProperty("min-number"));
-            int maxNumber = Integer.parseInt(properties.getProperty("max-number"));
+            int minNumber = Integer.parseInt(properties.getProperty("min.number"));
+            int maxNumber = Integer.parseInt(properties.getProperty("max.number"));
             int increment = Integer.parseInt(properties.getProperty("increment"));
             List<Integer> list = new ArrayList<>();
             while (maxNumber >= minNumber) {

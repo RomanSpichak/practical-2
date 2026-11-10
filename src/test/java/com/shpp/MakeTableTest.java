@@ -43,16 +43,16 @@ class MakeTableTest {
     }
 
     @Test
-    @DisplayName("Should return true min-number is digit")
+    @DisplayName("Should return true min.number is digit")
     void shouldReturnMinNumberIsDigit() {
-        boolean minNumberIsDigit = isDigit(Integer.parseInt(properties.getProperty("min-number")));
+        boolean minNumberIsDigit = isDigit(Integer.parseInt(properties.getProperty("min.number")));
         assertTrue(minNumberIsDigit, "Fail - min-number value must be digit");
     }
 
     @Test
-    @DisplayName("Should return true max-number is digit")
+    @DisplayName("Should return true max.number is digit")
     void shouldReturnMaxNumberIsDigit() {
-        boolean maxNumberIsDigit = isDigit(Integer.parseInt(properties.getProperty("max-number")));
+        boolean maxNumberIsDigit = isDigit(Integer.parseInt(properties.getProperty("max.number")));
         assertTrue(maxNumberIsDigit, "Fail - max-number value must be digit");
     }
 
