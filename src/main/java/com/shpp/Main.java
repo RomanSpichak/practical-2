@@ -30,12 +30,7 @@ public class Main {
         String greeting = new MakeGreeting().getGreeting(userName, format);
         LOGGER.info("greeting: {}", greeting);
 
-        switch (type) {
-            case "int": new MakeTable().getInteger(properties); break;
-            case "double": new MakeTable().getDouble(properties);break;
-            case "float": new MakeTable().getFloat(properties); break;
-            case "long": new MakeTable().getLong(properties); break;
-        }
+        new MakeTable().getTable(properties, type);
 
         LOGGER.info("Application -= table =- Ended");
     }

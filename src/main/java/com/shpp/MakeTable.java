@@ -6,6 +6,16 @@ import java.util.Properties;
 
 public class MakeTable {
 
+
+    public void getTable(Properties properties, String type) {
+        switch (type) {
+            case "int": getInteger(properties); break;
+            case "double": getDouble(properties);break;
+            case "float": getFloat(properties); break;
+            case "long": getLong(properties); break;
+        }
+    }
+
     public void getLong(Properties properties) {
         if (properties != null) {
             long minNumber = Long.parseLong(properties.getProperty("min.number"));
