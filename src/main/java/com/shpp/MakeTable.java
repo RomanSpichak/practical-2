@@ -21,19 +21,40 @@ public class MakeTable {
         }
     }
 
-    public void getLong(Properties properties) {
+    public void getInteger(Properties properties) {
         if (properties != null) {
-            long minNumber = Long.parseLong(properties.getProperty("min.number"));
-            long maxNumber = Long.parseLong(properties.getProperty("max.number"));
-            long increment = Long.parseLong(properties.getProperty("increment"));
-            List<Long> list = new ArrayList<>();
+            int minNumber = Integer.parseInt(properties.getProperty("min.number"));
+            int maxNumber = Integer.parseInt(properties.getProperty("max.number"));
+            int increment = Integer.parseInt(properties.getProperty("increment"));
+            List<Integer> list = new ArrayList<>();
             while (maxNumber >= minNumber) {
                 list.add(minNumber);
                 minNumber = minNumber + increment;
             }
-            System.out.println("long " + list);
+            System.out.println("int " + list);
             list.forEach(row -> {
-                List<Long> listRow = new ArrayList<>();
+                List<Integer> listRow = new ArrayList<>();
+                list.forEach(col -> {
+                    listRow.add(row * col);
+                });
+                System.out.println("[" + row + "] " + listRow);
+            });
+        }
+    }
+
+    public void getDouble(Properties properties) {
+        if (properties != null) {
+            double minNumber = Double.parseDouble(properties.getProperty("min.number"));
+            double maxNumber = Double.parseDouble(properties.getProperty("max.number"));
+            double increment = Double.parseDouble(properties.getProperty("increment"));
+            List<Double> list = new ArrayList<>();
+            while (maxNumber >= minNumber) {
+                list.add(minNumber);
+                minNumber = minNumber + increment;
+            }
+            System.out.println("double " + list);
+            list.forEach(row -> {
+                List<Double> listRow = new ArrayList<>();
                 list.forEach(col -> {
                     listRow.add(row * col);
                 });
@@ -63,41 +84,19 @@ public class MakeTable {
         }
     }
 
-    public void getDouble(Properties properties) {
+    public void getLong(Properties properties) {
         if (properties != null) {
-            double minNumber = Double.parseDouble(properties.getProperty("min.number"));
-            double maxNumber = Double.parseDouble(properties.getProperty("max.number"));
-            double increment = Double.parseDouble(properties.getProperty("increment"));
-            List<Double> list = new ArrayList<>();
+            long minNumber = Long.parseLong(properties.getProperty("min.number"));
+            long maxNumber = Long.parseLong(properties.getProperty("max.number"));
+            long increment = Long.parseLong(properties.getProperty("increment"));
+            List<Long> list = new ArrayList<>();
             while (maxNumber >= minNumber) {
                 list.add(minNumber);
                 minNumber = minNumber + increment;
             }
-            System.out.println("double " + list);
+            System.out.println("long " + list);
             list.forEach(row -> {
-                List<Double> listRow = new ArrayList<>();
-                list.forEach(col -> {
-                    listRow.add(row * col);
-                });
-                System.out.println("[" + row + "] " + listRow);
-            });
-        }
-
-    }
-
-    public void getInteger(Properties properties) {
-        if (properties != null) {
-            int minNumber = Integer.parseInt(properties.getProperty("min.number"));
-            int maxNumber = Integer.parseInt(properties.getProperty("max.number"));
-            int increment = Integer.parseInt(properties.getProperty("increment"));
-            List<Integer> list = new ArrayList<>();
-            while (maxNumber >= minNumber) {
-                list.add(minNumber);
-                minNumber = minNumber + increment;
-            }
-            System.out.println("int " + list);
-            list.forEach(row -> {
-                List<Integer> listRow = new ArrayList<>();
+                List<Long> listRow = new ArrayList<>();
                 list.forEach(col -> {
                     listRow.add(row * col);
                 });

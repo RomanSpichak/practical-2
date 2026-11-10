@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 
 public class MakeGreeting {
 
-
     private static final Logger LOGGER = LoggerFactory.getLogger(MakeGreeting.class);
 
     public String getGreeting(String userName, String format) {
