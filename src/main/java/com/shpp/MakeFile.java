@@ -7,18 +7,18 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class MakeGreeting {
+public class MakeFile {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MakeGreeting.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MakeFile.class);
 
-    public String getGreeting(String userName, String format) {
+    public String getFile(String valueToFile, String format) {
 
         ObjectMapper mapper = format.equals("xml") ?
                 new XmlMapper().enable(SerializationFeature.INDENT_OUTPUT):
                 new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
         String output = "";
         try {
-            output = mapper.writeValueAsString(" Hello " + userName + " ! ");
+            output = mapper.writeValueAsString(valueToFile);
             LOGGER.info("Output text added to {} file", format);
         } catch (JsonProcessingException e) {
             LOGGER.error("Error - mapper write as string = {}", e.getMessage());
