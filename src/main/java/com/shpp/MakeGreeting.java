@@ -13,6 +13,7 @@ public class MakeGreeting {
     private static final Logger LOGGER = LoggerFactory.getLogger(MakeGreeting.class);
 
     public String getGreeting(String userName, String format) {
+
         ObjectMapper mapper = format.equals("xml") ?
                 new XmlMapper().enable(SerializationFeature.INDENT_OUTPUT):
                 new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
@@ -25,4 +26,5 @@ public class MakeGreeting {
         }
         return output;
     }
+
 }

@@ -30,9 +30,10 @@ public class Main {
         String greeting = new MakeGreeting().getGreeting(userName, format);
         LOGGER.info("greeting: {}", greeting);
 
+        LOGGER.info("Table multiply making ...");
         new MakeTable().getTable(properties, type);
 
-        LOGGER.info("Application -= table =- Ended");
+        LOGGER.info("Application -= table =- Finished");
     }
 
 }
