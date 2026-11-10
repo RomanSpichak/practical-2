@@ -26,18 +26,11 @@ class MakeTableTest {
         assertFalse(properties.isEmpty(), "Fail - application properties is empty ...");
     }
 
-    @Test
-    @DisplayName("Should return true value more than zero")
-    void shouldReturnIntegerValueMoreThanZero() {
-        boolean isMoreThanZero = Integer.parseInt(properties.getProperty("increment")) > 0;
-        assertTrue(isMoreThanZero, "Fail - increment must be more than zero");
-    }
-
     // method to checking value is digit
-    private boolean isDigit(Properties property, String propertyName) {
+    private boolean isDigit(Properties property, String propertyKey) {
         boolean result = false;
         try {
-            int number = Integer.parseInt(property.getProperty(propertyName));
+            Integer.parseInt(property.getProperty(propertyKey));
             result = true;
         } catch (NumberFormatException e) {
             LOGGER.error("Fail - must be a number {}", e.getMessage());
@@ -64,6 +57,13 @@ class MakeTableTest {
     void shouldReturnMaxNumberIsDigit() {
         boolean maxNumberIsDigit = isDigit(properties, "max.number");
         assertTrue(maxNumberIsDigit, "Fail - max-number value must be digit");
+    }
+
+    @Test
+    @DisplayName("Should return true value more than zero")
+    void shouldReturnIntegerValueMoreThanZero() {
+        boolean isMoreThanZero = Integer.parseInt(properties.getProperty("increment")) > 0;
+        assertTrue(isMoreThanZero, "Fail - increment must be more than zero");
     }
 
 }
