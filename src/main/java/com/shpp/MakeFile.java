@@ -11,7 +11,7 @@ public class MakeFile {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MakeFile.class);
 
-    public String getFile(String valueToFile, String format) {
+    public String getString(String valueToFile, String format) {
 
         ObjectMapper mapper = format.equals("xml") ?
                 new XmlMapper().enable(SerializationFeature.INDENT_OUTPUT):
