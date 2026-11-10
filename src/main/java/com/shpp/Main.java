@@ -20,15 +20,15 @@ public class Main {
 
         Properties properties = new ReadFile().getAppProperties();
         String userName = properties.getProperty("user.name");
-        LOGGER.info("user name loaded = {}", userName);
+        LOGGER.info("User name loaded = {}", userName);
 
         String format = System.getProperty("format", "json");
-        LOGGER.info("format loaded = {}", format);
+        LOGGER.info("Format loaded = {}", format);
         String type = System.getProperty("type", "int");
-        LOGGER.info("type loaded = {}", type);
+        LOGGER.info("Type loaded = {}", type);
 
         String greeting = new MakeGreeting().getGreeting(userName, format);
-        LOGGER.info("greeting: {}", greeting);
+        LOGGER.info("Greeting: {}", greeting);
 
         LOGGER.info("Table multiply making ...");
         new MakeTable().getTable(properties, type);
