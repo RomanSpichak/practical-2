@@ -10,11 +10,13 @@ class MakeGreetingTest {
 
     @BeforeEach
     void setUp() {
-        // TODO - some load and e.t.c.
+        // TODO
     }
 
     @Test
-    @DisplayName("???")
+    @DisplayName("Should return ???")
     void getGreeting() {
+        // TODO
     }
+
 }
