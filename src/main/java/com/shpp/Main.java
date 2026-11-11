@@ -14,7 +14,7 @@ public class Main {
 
         LOGGER.info("Application -= table =- Started");
 
-        Properties properties = new ReadFile().getAppProperties();
+        Properties properties = ReadFile.getAppProperties();
         String userName = properties.getProperty("user.name");
         LOGGER.info("User name loaded = {}", userName);
         String greeting = properties.getProperty("greeting");
@@ -24,11 +24,11 @@ public class Main {
         String type = System.getProperty("type", "int");
         LOGGER.info("Type loaded = {}", type);
 
-        String string = new MakeFile().getString(greeting + " " + userName + " !", format);
+        String string = MakeFile.getString(greeting + " " + userName + " !", format);
         LOGGER.info("Greeting: {}", string);
 
         LOGGER.info("Table multiply drawing ...");
-        new MakeTable().getTable(properties, type);
+        MakeTable.getTable(properties, type);
 
         LOGGER.info("Application -= table =- Finished");
     }

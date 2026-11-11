@@ -11,7 +11,7 @@ public class ReadFile {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ReadFile.class);
 
-    public Properties getAppProperties() {
+    public static Properties getAppProperties() {
         Properties properties = new Properties();
         java.io.File external = new java.io.File("application.properties");
         InputStream internal = Main.class.getClassLoader().getResourceAsStream("application.properties");

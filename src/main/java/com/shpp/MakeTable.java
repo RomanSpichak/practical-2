@@ -12,7 +12,7 @@ public class MakeTable {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MakeTable.class);
 
-    public void getTable(Properties properties, String type) {
+    public static void getTable(Properties properties, String type) {
         switch (type) {
             case "int": getInteger(properties); break;
             case "double": getDouble(properties);break;
@@ -21,7 +21,7 @@ public class MakeTable {
         }
     }
 
-    public void getInteger(Properties properties) {
+    private static void getInteger(Properties properties) {
         if (properties != null) {
             int minNumber = Integer.parseInt(properties.getProperty("min.number"));
             int maxNumber = Integer.parseInt(properties.getProperty("max.number"));
@@ -42,7 +42,7 @@ public class MakeTable {
         }
     }
 
-    public void getDouble(Properties properties) {
+    private static void getDouble(Properties properties) {
         if (properties != null) {
             double minNumber = Double.parseDouble(properties.getProperty("min.number"));
             double maxNumber = Double.parseDouble(properties.getProperty("max.number"));
@@ -63,7 +63,7 @@ public class MakeTable {
         }
     }
 
-    public void getFloat(Properties properties) {
+    private static void getFloat(Properties properties) {
         if (properties != null) {
             float minNumber = Float.parseFloat(properties.getProperty("min.number"));
             float maxNumber = Float.parseFloat(properties.getProperty("max.number"));
@@ -84,7 +84,7 @@ public class MakeTable {
         }
     }
 
-    public void getLong(Properties properties) {
+    private static void getLong(Properties properties) {
         if (properties != null) {
             long minNumber = Long.parseLong(properties.getProperty("min.number"));
             long maxNumber = Long.parseLong(properties.getProperty("max.number"));
