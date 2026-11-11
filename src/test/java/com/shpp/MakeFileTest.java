@@ -25,7 +25,11 @@ class MakeFileTest {
     @Test
     @DisplayName("Should return false if format not equals xml or json")
     void shouldReturnFalseIfFormatNotEqualsXmlOrJson() {
-        boolean isSupportedFormat = format.equalsIgnoreCase("xml") || format.equalsIgnoreCase("json");
+        /*
+            ХЗ вообще что тут проверяю
+         */
+        boolean isSupportedFormat = format.equalsIgnoreCase("xml") ||
+                format.equalsIgnoreCase("json");
         assertTrue(isSupportedFormat, "Test - format is not supported, please use xml or json");
     }
 
