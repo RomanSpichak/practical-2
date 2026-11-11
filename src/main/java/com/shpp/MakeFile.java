@@ -16,14 +16,14 @@ public class MakeFile {
         ObjectMapper mapper = format.equals("xml") ?
                 new XmlMapper().enable(SerializationFeature.INDENT_OUTPUT):
                 new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
-        String output = "";
+        String out = "";
         try {
-            output = mapper.writeValueAsString(valueToFile);
+            out = mapper.writeValueAsString(valueToFile);
             LOGGER.info("Output text added to {} file", format);
         } catch (JsonProcessingException e) {
-            LOGGER.error("Error - mapper write as string = {}", e.getMessage());
+            LOGGER.error("Error - mapper write as out = {}", e.getMessage());
         }
-        return output;
+        return out;
     }
 
 }
