@@ -13,9 +13,7 @@ public class MakeFile {
 
     public String getString(String valueToFile, String format) {
 
-        ObjectMapper mapper = format.equals("xml") ?
-                new XmlMapper().enable(SerializationFeature.INDENT_OUTPUT):
-                new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
+        ObjectMapper mapper = format.equals("xml") ? new XmlMapper(): new ObjectMapper();
         String out = "";
         try {
             out = mapper.writeValueAsString(valueToFile);
