@@ -15,14 +15,19 @@ class MakeFileTest {
      *  String out что не остался пустой
      */
 
+    private String format;
+
     @BeforeEach
     void setUp() {
         // Starting default
+        format = System.getProperty("format", "json");
     }
 
     @Test
-    @DisplayName("name of the test")
-    void nameOfTest() {
+    @DisplayName("Should return false if format is no empty")
+    void shouldReturnFalseIfFormatIsEmpty() {
+        boolean isEmpty = format.isEmpty();
+        assertFalse(isEmpty, "Test - format can't be empty, use default json");
     }
 
 }
