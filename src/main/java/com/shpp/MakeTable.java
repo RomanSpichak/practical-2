@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
@@ -106,7 +105,7 @@ public class MakeTable {
         }
     }
 
-    public static String makeTable(Properties properties, String type) {
+    public static String integerTable(Properties properties, String type) {
 
         int min = 2;
         int max = 10;
