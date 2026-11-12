@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
@@ -31,9 +32,9 @@ public class MakeTable {
 
     private static void getInteger(Properties properties) {
         if (properties != null) {
-            int minNumber = Integer.parseInt(properties.getProperty("min.number"));
-            int maxNumber = Integer.parseInt(properties.getProperty("max.number"));
-            int increment = Integer.parseInt(properties.getProperty("increment"));
+            int minNumber = Integer.parseInt(properties.getProperty(MINIMUM));
+            int maxNumber = Integer.parseInt(properties.getProperty(MAXIMUM));
+            int increment = Integer.parseInt(properties.getProperty(INCREMENT));
             List<Integer> list = new ArrayList<>();
             while (maxNumber >= minNumber) {
                 list.add(minNumber);
@@ -115,20 +116,24 @@ public class MakeTable {
 
     public static String integerTable(Properties properties, String type) {
 
-        int min = 2;
-        int max = 10;
-        int incr = 2;
-        int size = max / incr;
-        List<Integer> numbers = new ArrayList<>();
-        for (int i = 0; i < size; i++) {
-            numbers.add(min);
-            min = min + incr;
+        int minNumber = Integer.parseInt(properties.getProperty(MINIMUM));
+        int maxNumber = Integer.parseInt(properties.getProperty(MAXIMUM));
+        int increment = Integer.parseInt(properties.getProperty(INCREMENT));
+        int size = maxNumber / increment;
+        int[] numbers = new int[size];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = minNumber;
+            minNumber = minNumber + increment;
         }
+
         StringBuilder stringBuilder = new StringBuilder("Table with numbers ");
-        stringBuilder.append(numbers).append("\n").append(String.format("%5s", "##"));
-        numbers.forEach(number -> {
-            stringBuilder.append(String.format("%5d", number));
-        });
+        stringBuilder.append(List.of(numbers)).append("\n").append(String.format("%5s", "##"));
+
+        for (int titleNumber : numbers) {
+            stringBuilder.append(String.format("%5d", titleNumber));
+        }
+
+
         stringBuilder.append("\n");
         for (int row : numbers) {
             stringBuilder.append(String.format("%5d", row));
