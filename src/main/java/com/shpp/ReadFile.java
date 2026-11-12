@@ -15,7 +15,7 @@ public class ReadFile {
 
         Properties properties = new Properties();
 
-        java.io.File external = new java.io.File("1application.properties");
+        java.io.File external = new java.io.File("application.properties");
         if (external.exists()) {
             try {
                 properties.load(new FileReader(external, StandardCharsets.UTF_8));

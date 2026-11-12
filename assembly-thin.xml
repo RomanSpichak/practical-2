@@ -8,7 +8,7 @@
 
     <dependencySets>
         <dependencySet>
-            <outputDirectory>/</outputDirectory>
+            <outputDirectory>./</outputDirectory>
             <useProjectArtifact>true</useProjectArtifact>
             <includes>
                 <include>${project.groupId}:${project.artifactId}</include>
@@ -16,7 +16,7 @@
         </dependencySet>
 
         <dependencySet>
-            <outputDirectory>/lib</outputDirectory>
+            <outputDirectory>./ lib</outputDirectory>
             <useProjectArtifact>false</useProjectArtifact>
             <unpack>false</unpack>
             <scope>runtime</scope>

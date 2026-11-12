@@ -24,7 +24,7 @@ public class Main {
         String type = System.getProperty("type", "int");
         LOGGER.info("Type loaded = {}", type);
 
-        String string = MakeFile.getString(greeting + " " + userName + " !", format);
+        String string = MakeFile.getString(greeting + " " + userName, format);
         LOGGER.info("Greeting: {}", string);
 
         LOGGER.info("Table multiply drawing ...");

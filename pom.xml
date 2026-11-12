@@ -6,12 +6,13 @@
 
     <groupId>com.shpp</groupId>
     <artifactId>practical-2</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>v2.0</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <application.name>table</application.name>
     </properties>
 
     <dependencies>
@@ -55,7 +56,7 @@
 
     <build>
         <!--suppress UnresolvedMavenProperty -->
-        <finalName>${project.artifactId}-${note}</finalName>
+        <finalName>${application.name}_${version}-${note}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -81,7 +82,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <note>f</note>
+                <note>fat</note>
             </properties>
             <build>
                 <plugins>
@@ -116,7 +117,7 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <note>t</note>
+                <note>thin</note>
             </properties>
             <build>
                 <plugins>
