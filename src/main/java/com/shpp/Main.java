@@ -28,9 +28,12 @@ public class Main {
         LOGGER.info("Greeting: {}", string);
 
         LOGGER.info("Table multiply drawing ...");
-        MakeTable.getTable(properties, type);
+        String table;
+
 
         LOGGER.info("Application -= table =- Finished");
+
+
     }
 
 }

@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
@@ -105,4 +106,41 @@ public class MakeTable {
         }
     }
 
+    public static String makeTable(Properties properties, String type) {
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(String.format("%20s", "Привіт Андрій або Роман"));
+        int min = 2;
+        int max = 10;
+        int incr = 2;
+        int size = max / incr;
+        List<Integer> numbers = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            numbers.add(min);
+            min = min + incr;
+        }
+        stringBuilder.append("\n");
+        stringBuilder.append(String.format("%5s", "[#]"));
+        numbers.forEach(number -> {
+            stringBuilder.append(String.format("%5d", number));
+        });
+        stringBuilder.append("\n");
+        for (int row : numbers) {
+            stringBuilder.append(String.format("%5d", row));
+            for (int col : numbers) {
+                stringBuilder.append(String.format("%5d", row * col));
+            }
+
+            stringBuilder.append("\n");
+        }
+
+        System.out.println(stringBuilder);
+
+        return stringBuilder.toString();
+    }
+
+
+    public static void main(String[] args) {
+        MakeTable.makeTable(new Properties(), "int");
+    }
 }
