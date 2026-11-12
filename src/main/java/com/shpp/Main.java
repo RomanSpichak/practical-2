@@ -24,9 +24,8 @@ public class Main {
         String type = System.getProperty("type", "int");
         LOGGER.debug("Type loaded = {}", type);
 
-        String string = MakeFile.getString(greeting + " " + userName, format);
-        LOGGER.info("Greeting: {}", string);
-
+        String greetingOut = MakeFile.getString(greeting + " " + userName, format);
+        LOGGER.info(greetingOut);
         String table = MakeTable.integerTable(properties, type);
         LOGGER.info(table);
 

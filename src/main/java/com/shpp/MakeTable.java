@@ -47,7 +47,6 @@ public class MakeTable {
             numbers.forEach(number -> {
                 builder.append(String.format("%5d", number));}); // tittle row
             builder.append("\n");
-
             numbers.forEach(row -> {
                 builder.append(String.format("%5d", row)); // first row element
                 numbers.forEach(col -> {
