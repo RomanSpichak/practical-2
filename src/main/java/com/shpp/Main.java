@@ -3,6 +3,7 @@ package com.shpp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
 import java.util.Properties;
 
 
@@ -28,6 +29,9 @@ public class Main {
         LOGGER.info(greetingOut);
         String table = MakeTable.integerTable(properties, type);
         LOGGER.info(table);
+
+        List<AppProp> appPropList = ReadFile.getList(properties);
+        LOGGER.debug("List record application properties loaded {}", appPropList);
 
         LOGGER.debug("Application -= table =- Finished");
 
