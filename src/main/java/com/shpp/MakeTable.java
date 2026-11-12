@@ -9,15 +9,23 @@ import java.util.Properties;
 
 public class MakeTable {
 
+    private final static String INT = "int";
+    private final static String DOUBLE = "double";
+    private final static String FLOAT = "float";
+    private final static String LONG = "long";
+    private final static String MAXIMUM = "max.number";
+    private final static String MINIMUM = "min.number";
+    private final static String INCREMENT = "increment";
+
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MakeTable.class);
 
     public static void getTable(Properties properties, String type) {
         switch (type) {
-            case "int": getInteger(properties); break;
-            case "double": getDouble(properties);break;
-            case "float": getFloat(properties); break;
-            case "long": getLong(properties); break;
+            case INT: getInteger(properties); break;
+            case DOUBLE: getDouble(properties);break;
+            case FLOAT: getFloat(properties); break;
+            case LONG: getLong(properties); break;
         }
     }
 
