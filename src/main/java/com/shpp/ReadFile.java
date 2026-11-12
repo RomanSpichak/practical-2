@@ -24,7 +24,6 @@ public class ReadFile {
             }
             return properties;
         }
-
         try (InputStream internal = Main.class.getClassLoader().getResourceAsStream("application.properties")) {
             if (internal != null) {
                 properties.load(new InputStreamReader(internal, StandardCharsets.UTF_8));
@@ -34,6 +33,5 @@ public class ReadFile {
         }
         return properties;
     }
-
 
 }
