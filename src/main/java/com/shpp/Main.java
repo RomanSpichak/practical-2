@@ -12,17 +12,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        LOGGER.info("Application -= table =- Started");
+        LOGGER.debug("Application -= table =- Started");
 
         Properties properties = ReadFile.getAppProperties();
         String userName = properties.getProperty("user.name");
-        LOGGER.info("User name loaded = {}", userName);
+        LOGGER.debug("User name loaded = {}", userName);
         String greeting = properties.getProperty("greeting");
 
         String format = System.getProperty("format", "json");
-        LOGGER.info("Format loaded = {}", format);
+        LOGGER.debug("Format loaded = {}", format);
         String type = System.getProperty("type", "int");
-        LOGGER.info("Type loaded = {}", type);
+        LOGGER.debug("Type loaded = {}", type);
 
         String string = MakeFile.getString(greeting + " " + userName, format);
         LOGGER.info("Greeting: {}", string);
@@ -30,7 +30,7 @@ public class Main {
         String table = MakeTable.integerTable(properties, type);
         LOGGER.info(table);
 
-        LOGGER.info("Application -= table =- Finished");
+        LOGGER.debug("Application -= table =- Finished");
 
 
     }

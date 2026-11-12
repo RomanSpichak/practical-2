@@ -17,7 +17,7 @@ public class MakeFile {
         String out = "";
         try {
             out = mapper.writeValueAsString(valueToFile);
-            LOGGER.info("Output text added to {} file", format);
+            LOGGER.debug("Output text added to {} file", format);
         } catch (JsonProcessingException e) {
             LOGGER.error("Error - mapper write as out = {}", e.getMessage());
         }

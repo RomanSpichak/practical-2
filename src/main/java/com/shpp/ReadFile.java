@@ -22,6 +22,7 @@ public class ReadFile {
             } catch (IOException e) {
                 LOGGER.error("Error reading external properties file: {}", e.getMessage());
             }
+            LOGGER.debug("Properties file loaded successfully from external file");
             return properties;
         }
         try (InputStream internal = Main.class.getClassLoader().getResourceAsStream("application.properties")) {
@@ -31,6 +32,7 @@ public class ReadFile {
         } catch (IOException e) {
             LOGGER.error("Error reading internal properties file: {}", e.getMessage());
         }
+        LOGGER.debug("Properties file loaded successfully from internal file");
         return properties;
     }
 
