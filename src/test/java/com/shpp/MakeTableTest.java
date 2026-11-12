@@ -17,7 +17,7 @@ class MakeTableTest {
 
     @BeforeEach
     void setUp() {
-        properties = new ReadFile().getAppProperties();
+        properties = ReadFile.getAppProperties();
     }
 
     @Test
@@ -64,6 +64,22 @@ class MakeTableTest {
     void shouldReturnIntegerValueMoreThanZero() {
         boolean isMoreThanZero = Integer.parseInt(properties.getProperty("increment")) > 0;
         assertTrue(isMoreThanZero, "Fail - increment must be more than zero");
+    }
+
+    @Test
+    @DisplayName("Should return true if maximum more of minimum")
+    void shouldReturnTrueIfMaxMoreMin () {
+        boolean isMaxMoreMin = Integer.parseInt(properties.getProperty("max.number")) >
+                Integer.parseInt(properties.getProperty("min.number"));
+        assertTrue(isMaxMoreMin, "Fail - max number cant be less min number");
+    }
+
+    @Test
+    @DisplayName("Should return true if the values are the same")
+    void shouldReturnTrueIfValuesAreSame () {
+        boolean isSameValues = Integer.parseInt(properties.getProperty("max.number")) ==
+                Integer.parseInt(properties.getProperty("min.number"));
+        assertFalse(isSameValues, "Fail - max number cant be less min number");
     }
 
 }
