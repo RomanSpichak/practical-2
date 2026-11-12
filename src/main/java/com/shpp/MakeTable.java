@@ -120,6 +120,7 @@ public class MakeTable {
         int maxNumber = Integer.parseInt(properties.getProperty(MAXIMUM));
         int increment = Integer.parseInt(properties.getProperty(INCREMENT));
         int size = maxNumber / increment;
+
         int[] numbers = new int[size];
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = minNumber;
@@ -132,7 +133,6 @@ public class MakeTable {
         for (int titleNumber : numbers) {
             stringBuilder.append(String.format("%5d", titleNumber));
         }
-
 
         stringBuilder.append("\n");
         for (int row : numbers) {
