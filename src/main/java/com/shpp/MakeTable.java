@@ -108,8 +108,6 @@ public class MakeTable {
 
     public static String makeTable(Properties properties, String type) {
 
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(String.format("%20s", "Привіт Андрій або Роман"));
         int min = 2;
         int max = 10;
         int incr = 2;
@@ -119,8 +117,8 @@ public class MakeTable {
             numbers.add(min);
             min = min + incr;
         }
-        stringBuilder.append("\n");
-        stringBuilder.append(String.format("%5s", "[#]"));
+        StringBuilder stringBuilder = new StringBuilder("Table with numbers ");
+        stringBuilder.append(numbers).append("\n").append(String.format("%5s", "##"));
         numbers.forEach(number -> {
             stringBuilder.append(String.format("%5d", number));
         });
@@ -130,17 +128,10 @@ public class MakeTable {
             for (int col : numbers) {
                 stringBuilder.append(String.format("%5d", row * col));
             }
-
             stringBuilder.append("\n");
         }
-
-        System.out.println(stringBuilder);
-
+        stringBuilder.delete(stringBuilder.length() -1, stringBuilder.length());
         return stringBuilder.toString();
     }
 
-
-    public static void main(String[] args) {
-        MakeTable.makeTable(new Properties(), "int");
-    }
 }

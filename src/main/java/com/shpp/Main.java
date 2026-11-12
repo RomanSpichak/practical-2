@@ -27,9 +27,8 @@ public class Main {
         String string = MakeFile.getString(greeting + " " + userName, format);
         LOGGER.info("Greeting: {}", string);
 
-        LOGGER.info("Table multiply drawing ...");
-        String table;
-
+        String table = MakeTable.makeTable(properties, type);
+        LOGGER.info(table);
 
         LOGGER.info("Application -= table =- Finished");
 
