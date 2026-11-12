@@ -12,9 +12,10 @@ public class ReadFile {
     private static final Logger LOGGER = LoggerFactory.getLogger(ReadFile.class);
 
     public static Properties getAppProperties() {
+
         Properties properties = new Properties();
-        java.io.File external = new java.io.File("application.properties");
-        InputStream internal = Main.class.getClassLoader().getResourceAsStream("application.properties");
+
+        java.io.File external = new java.io.File("1application.properties");
         if (external.exists()) {
             try {
                 properties.load(new FileReader(external, StandardCharsets.UTF_8));
@@ -22,13 +23,16 @@ public class ReadFile {
             } catch (IOException e) {
                 LOGGER.error("Error reading external properties file: {}", e.getMessage());
             }
-        } else if (internal != null) {
-            try {
+            return properties;
+        }
+
+        try (InputStream internal = Main.class.getClassLoader().getResourceAsStream("application.properties")) {
+            if (internal != null) {
                 properties.load(new InputStreamReader(internal, StandardCharsets.UTF_8));
                 LOGGER.info("Application properties loaded from internal file");
-            } catch (IOException e) {
-                LOGGER.error("Error reading internal properties file: {}", e.getMessage());
             }
+        } catch (IOException e) {
+            LOGGER.error("Error reading internal properties file: {}", e.getMessage());
         }
         return properties;
     }

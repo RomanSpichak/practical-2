@@ -14,7 +14,7 @@ class ReadFileTest {
 
     @BeforeEach
     void setUp() {
-        properties = new ReadFile().getAppProperties();
+        properties = ReadFile.getAppProperties();
     }
 
     @Test
