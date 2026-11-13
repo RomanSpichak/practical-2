@@ -29,9 +29,7 @@ public class Main {
         LOGGER.info(greetingOut);
         String table = MakeTable.integerTable(properties, type);
         LOGGER.info(table);
-
-        List<AppProp> appPropList = ReadFile.getList(properties);
-        LOGGER.debug("List record application properties loaded {}", appPropList);
+        
 
         LOGGER.debug("Application -= table =- Finished");
 
