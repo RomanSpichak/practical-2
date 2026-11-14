@@ -17,7 +17,7 @@ public class App {
 
     public static void main(String[] args) {
 
-        Properties properties = Loader.loadProperties(APPLICATION_PROPERTIES);
+        Properties properties = ConfigLoader.loadProperties(APPLICATION_PROPERTIES);
         properties.forEach((key, value) -> {
             log.info("{}: {}", key, value);});
 

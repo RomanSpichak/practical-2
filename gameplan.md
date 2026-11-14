@@ -1,5 +1,16 @@
 -= game plan =-
 
+class App (main) {
+    Properties applicationProperties = Loader.getApplicationProperties()
+        загрузка application properties external/internal
+           
+    String table = TableBuilder.getTableAsString(applicationProperties)
+        две ветки long и double, StringBuilder + String.format
+    
+    String serialized = Serialized.getSerializedAsString(table)
+    logger info (serialized)
+
+
 TableBuilder 
     
     (ROOT METHOD)
@@ -15,13 +26,12 @@ TableBuilder
             increment > 0
             max > 0
             max > min
-
         private static boolean isFractionalNumber(String type)
             return DOUBLE || FLOAT;
-
         private static String buildTable (properties)
             сделать шапку таблицы
             if (isFractionalNumber) 
-                // сделать таблицу дробных
-            сделать таблицу целояисленных
-            
+                // code сделать таблицу дробных
+                return
+            // code сделать таблицу целочисленных
+            return

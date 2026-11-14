@@ -7,9 +7,9 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
-public class Loader {
+public class ConfigLoader {
 
-    private static final Logger log = LoggerFactory.getLogger(Loader.class);
+    private static final Logger log = LoggerFactory.getLogger(ConfigLoader.class);
 
     public static Properties loadProperties(String fileName) {
 
@@ -32,6 +32,5 @@ public class Loader {
         }
         return properties;
     }
-
 
 }
