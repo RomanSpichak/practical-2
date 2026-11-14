@@ -31,6 +31,7 @@ public class TableBuilder {
     }
 
     private static boolean isCorrectData(Properties properties) {
+
         return false;
     }
 
