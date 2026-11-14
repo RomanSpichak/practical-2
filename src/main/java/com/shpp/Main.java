@@ -29,7 +29,6 @@ public class Main {
         LOGGER.info(greetingOut);
         String table = MakeTable.integerTable(properties, type);
         LOGGER.info(table);
-        
 
         LOGGER.debug("Application -= table =- Finished");
 
