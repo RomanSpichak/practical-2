@@ -23,12 +23,7 @@ public class TableBuilder {
     }
 
     private static String buildTable(Properties properties) {
-        StringBuilder builder = new StringBuilder();
-        if (isFractionalNumber(TYPE)) {
-            // code
-        }
-        // code
-        return builder.toString();
+        return null;
     }
 
     private static boolean isFractionalNumber(String type) {
@@ -38,6 +33,7 @@ public class TableBuilder {
     private static boolean isCorrectData(Properties properties) {
         return false;
     }
+
 
     public static void main(String[] args) {
         System.out.println(TableBuilder.isFractionalNumber("short"));
