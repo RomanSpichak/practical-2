@@ -1,8 +1,5 @@
 Game Plan
 
-
-
-
 ```mermaid
 graph TD
     App --> ConfigLoader --> 
