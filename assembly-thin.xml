@@ -14,7 +14,7 @@
 
     <dependencySets>
         <dependencySet>
-            <outputDirectory>./ lib</outputDirectory>
+            <outputDirectory>./lib</outputDirectory>
             <useProjectArtifact>false</useProjectArtifact>
             <includes>
                 <include>${project.artifactId}_${project.version}-${note}</include>
@@ -22,7 +22,7 @@
         </dependencySet>
 
         <dependencySet>
-            <outputDirectory>./ lib</outputDirectory>
+            <outputDirectory>./lib</outputDirectory>
             <useProjectArtifact>false</useProjectArtifact>
             <unpack>false</unpack>
             <scope>runtime</scope>
