@@ -1,6 +1,7 @@
-/target/
-/.idea/
-/*.iml
-/.DS_Store
-/*.log
-/GamePlan.md
+https:
+target
+.idea
+*.iml
+.DS_Store
+*.log
+src/main/java/com/shpp/note.md
