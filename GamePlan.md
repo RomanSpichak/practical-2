@@ -1,5 +1,7 @@
-Game Plan
 
+---
+Global Refactoring Plan
+---
 ```mermaid
 graph TD
     App --> ConfigLoader --> 
@@ -12,10 +14,15 @@ graph TD
         |0.1 + 0.2 = 0.3| 2(BigDecimal) -->
             BuildTable --> Serialized -->
             print_to_console_Table
-
+```
+---
+Testing Application
+---
+```mermaid
+graph LR
     junit_tests --- Loader
-    Loader --- Builder
+    Loader --- Verification
+    Verification --- Builder
     Builder --- BigDecimal
     BigDecimal --- Serialization
-    
 ```

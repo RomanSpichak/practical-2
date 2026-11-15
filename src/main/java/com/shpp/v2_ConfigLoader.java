@@ -13,6 +13,9 @@ public class v2_ConfigLoader {
 
     private static final Logger log = LoggerFactory.getLogger(v2_ConfigLoader.class);
     private static final String APPLICATION_PROPERTIES = "application.properties";
+    private static final String FORMAT = "format";
+    private static final String TYPE = "type";
+
 
     public static HashMap<String, String> getApplicationConfig() {
 
@@ -25,7 +28,7 @@ public class v2_ConfigLoader {
                 log.error("Error - mistake at reading external file: {}", e.getMessage());
             }
             log.debug("Application properties successful load from external file: {}", properties);
-            return saveAppPropToMap(properties);
+            return getPropertiesMap(properties);
         }
         try (InputStream internal = Main.class.getClassLoader().getResourceAsStream(APPLICATION_PROPERTIES)) {
             if (internal != null) {
@@ -35,17 +38,14 @@ public class v2_ConfigLoader {
             log.error("Error - mistake at reading internal file: {}", e.getMessage());
         }
         log.debug("Application properties successful load from internal file: {}", properties);
-        return saveAppPropToMap(properties);
+        return getPropertiesMap(properties);
     }
 
-    private static HashMap<String, String> saveAppPropToMap(Properties properties) {
+    private static HashMap<String, String> getPropertiesMap(Properties properties) {
         HashMap<String, String> map = new HashMap<>();
         properties.stringPropertyNames().forEach(name -> map.put(name, properties.getProperty(name)));
-        return map;
-    }
 
-    public static void main(String[] args) {
-        System.out.println(v2_ConfigLoader.getApplicationConfig());
+        return map;
     }
 
 }
