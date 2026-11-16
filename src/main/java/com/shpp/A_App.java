@@ -6,10 +6,10 @@ import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 
-public class v2_App extends v2_SerializationString {
+public class A_App extends v2_SerializationString {
 
 
-    private static final Logger log = LoggerFactory.getLogger(v2_App.class);
+    private static final Logger log = LoggerFactory.getLogger(A_App.class);
 
     public static void main(String[] args) {
 
