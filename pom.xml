@@ -101,7 +101,7 @@
                                     <shadedArtifactAttached>false</shadedArtifactAttached>
                                     <transformers>
                                         <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                            <mainClass>com.shpp.Main</mainClass>
+                                            <mainClass>com.shpp.x_Main</mainClass>
                                         </transformer>
                                     </transformers>
                                     <createDependencyReducedPom>false</createDependencyReducedPom>
@@ -132,7 +132,7 @@
                                 <manifest>
                                     <addClasspath>true</addClasspath>
                                     <classpathPrefix>./lib/</classpathPrefix>
-                                    <mainClass>com.shpp.Main</mainClass>
+                                    <mainClass>com.shpp.x_Main</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>

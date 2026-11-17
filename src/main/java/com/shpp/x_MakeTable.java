@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class MakeTable {
+public class x_MakeTable {
 
     private final static String INT = "int";
     private final static String DOUBLE = "double";
@@ -16,7 +16,7 @@ public class MakeTable {
     private final static String MAXIMUM = "max.number";
     private final static String MINIMUM = "min.number";
     private final static String INCREMENT = "increment";
-    private static final Logger LOGGER = LoggerFactory.getLogger(MakeTable.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(x_MakeTable.class);
 
 
     public static String integerTable(Properties properties, String type) {

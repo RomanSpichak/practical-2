@@ -8,14 +8,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Properties;
 
+import static com.shpp.Constants.*;
+
 public class Config {
 
     private static final Logger log = LoggerFactory.getLogger(Config.class);
-    private static final String APPLICATION_PROPERTIES = "application.properties";
-    private static final String FORMAT = "format";
-    private static final String TYPE = "type";
-    private static final String DEFAULT_FORMAT = "json";
-    private static final String DEFAULT_TYPE = "int";
 
     public static HashMap<String, String> getAppConfig() {
         Properties properties = new Properties();
@@ -29,7 +26,7 @@ public class Config {
             log.debug("Application properties successful load from external file: {}", properties);
             return getMap(properties);
         }
-        try (InputStream internal = Main.class.getClassLoader().getResourceAsStream(APPLICATION_PROPERTIES)) {
+        try (InputStream internal = x_Main.class.getClassLoader().getResourceAsStream(APPLICATION_PROPERTIES)) {
             if (internal != null) {
                 properties.load(new InputStreamReader(internal, StandardCharsets.UTF_8));
             }

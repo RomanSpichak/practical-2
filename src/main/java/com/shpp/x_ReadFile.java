@@ -7,12 +7,12 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
-public class ReadFile {
+public class x_ReadFile {
 
     private final static String MAXIMUM = "max.number";
     private final static String MINIMUM = "min.number";
     private final static String INCREMENT = "increment";
-    private static final Logger LOGGER = LoggerFactory.getLogger(ReadFile.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(x_ReadFile.class);
 
     public static Properties getAppProperties() {
 
@@ -28,7 +28,7 @@ public class ReadFile {
             LOGGER.debug("Properties file loaded successfully from external file");
             return properties;
         }
-        try (InputStream internal = Main.class.getClassLoader().getResourceAsStream("application.properties")) {
+        try (InputStream internal = x_Main.class.getClassLoader().getResourceAsStream("application.properties")) {
             if (internal != null) {
                 properties.load(new InputStreamReader(internal, StandardCharsets.UTF_8));
             }

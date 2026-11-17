@@ -6,17 +6,11 @@ import org.slf4j.LoggerFactory;
 import java.math.BigDecimal;
 import java.util.HashMap;
 
+import static com.shpp.Constants.*;
+
 public class Validation {
 
     private static final Logger log = LoggerFactory.getLogger(Validation.class);
-    private static final String APP_NAME = "app.name";
-    private static final String GREETING = "greeting";
-    private static final String INCREMENT = "increment";
-    private static final String MINIMUM = "min.number";
-    private static final String MAXIMUM = "max.number";
-    private static final String CORRECT_APP_NAME = "table";
-    private static final String CORRECT_EXTERNAL = "Привіт з зовнішнього файлу";
-    private static final String CORRECT_INTERNAL = "Привіт з внутрішнього файлу";
 
 
     public static boolean isNotValidProps(HashMap<String, String> appConfig) {
@@ -29,9 +23,9 @@ public class Validation {
 
     private static boolean isNumbersHasIllegalValues(HashMap<String, String> appConfig) {
         try {
-            BigDecimal increment = new BigDecimal(appConfig.get(INCREMENT));
-            BigDecimal minimum = new BigDecimal(appConfig.get(MINIMUM));
-            BigDecimal maximum = new BigDecimal(appConfig.get(MAXIMUM));
+            var increment = new BigDecimal(appConfig.get(INCREMENT));
+            var minimum = new BigDecimal(appConfig.get(MINIMUM));
+            var maximum = new BigDecimal(appConfig.get(MAXIMUM));
             if (increment.signum() <= 0) {
                 return true;
             }

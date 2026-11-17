@@ -3,19 +3,18 @@ package com.shpp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
 import java.util.Properties;
 
 
-public class Main {
+public class x_Main {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(x_Main.class);
 
     public static void main(String[] args) {
 
         LOGGER.debug("Application -= table =- Started");
 
-        Properties properties = ReadFile.getAppProperties();
+        Properties properties = x_ReadFile.getAppProperties();
         String userName = properties.getProperty("user.name");
         LOGGER.debug("User name loaded = {}", userName);
         String greeting = properties.getProperty("greeting");
@@ -25,9 +24,9 @@ public class Main {
         String type = System.getProperty("type", "int");
         LOGGER.debug("Type loaded = {}", type);
 
-        String greetingOut = MakeFile.getString(greeting + " " + userName, format);
+        String greetingOut = x_MakeFile.getString(greeting + " " + userName, format);
         LOGGER.info(greetingOut);
-        String table = MakeTable.integerTable(properties, type);
+        String table = x_MakeTable.integerTable(properties, type);
         LOGGER.info(table);
 
         LOGGER.debug("Application -= table =- Finished");

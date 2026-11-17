@@ -17,7 +17,7 @@ class MakeTableTest {
 
     @BeforeEach
     void setUp() {
-        properties = ReadFile.getAppProperties();
+        properties = x_ReadFile.getAppProperties();
     }
 
     @Test

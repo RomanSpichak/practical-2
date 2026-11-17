@@ -2,14 +2,13 @@ package com.shpp;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class MakeFile {
+public class x_MakeFile {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MakeFile.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(x_MakeFile.class);
 
     public static String getString(String valueToFile, String format) {
 
