@@ -20,9 +20,9 @@ public class App {
             return;
         }
 
-        StringBuilder table; // make table numbers
+        StringBuilder numbersTable = BuildTable.getTableAsString(appConfig);
 
-        // serialize to format
+        String tableFormatDoc = DocFormat.getTableFormatDoc(numbersTable);
 
     }
 

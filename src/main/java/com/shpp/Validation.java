@@ -24,10 +24,10 @@ public class Validation {
                 !isAppSupportCyrillic(appConfig.get(GREETING))) {
             return false;
         }
-        return !isNumbersHasIllegalFormat(appConfig);
+        return !isNumbersHasIllegalValues(appConfig);
     }
 
-    private static boolean isNumbersHasIllegalFormat(HashMap<String, String> appConfig) {
+    private static boolean isNumbersHasIllegalValues(HashMap<String, String> appConfig) {
         try {
             BigDecimal increment = new BigDecimal(appConfig.get(INCREMENT));
             BigDecimal minimum = new BigDecimal(appConfig.get(MINIMUM));
