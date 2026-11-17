@@ -8,7 +8,6 @@ import java.util.HashMap;
 
 public class Validation {
 
-
     private static final Logger log = LoggerFactory.getLogger(Validation.class);
     private static final String APP_NAME = "app.name";
     private static final String GREETING = "greeting";
@@ -18,7 +17,6 @@ public class Validation {
     private static final String CORRECT_APP_NAME = "table";
     private static final String CORRECT_EXTERNAL = "Привіт з зовнішнього файлу";
     private static final String CORRECT_INTERNAL = "Привіт з внутрішнього файлу";
-    private static final String ZERO = "0";
 
 
     public static boolean isNotValidProps(HashMap<String, String> appConfig) {
@@ -30,14 +28,22 @@ public class Validation {
     }
 
     private static boolean isNumbersHasIllegalFormat(HashMap<String, String> appConfig) {
-        if (new BigDecimal(appConfig.get(INCREMENT)).compareTo(new BigDecimal(ZERO)) > 0 ||
-                new BigDecimal(appConfig.get(MINIMUM)).compareTo(new BigDecimal(appConfig.get(MAXIMUM))) > 0 ||
-                new BigDecimal(appConfig.get(MAXIMUM)).compareTo(new BigDecimal(ZERO)) > -1) {
+        try {
+            BigDecimal increment = new BigDecimal(appConfig.get(INCREMENT));
+            BigDecimal minimum = new BigDecimal(appConfig.get(MINIMUM));
+            BigDecimal maximum = new BigDecimal(appConfig.get(MAXIMUM));
+            if (increment.signum() <= 0) {
+                return true;
+            }
+            if (minimum.compareTo(maximum) > 0) {
+                return true;
+            }
+            return increment.compareTo(maximum) == 0;
+        } catch (NumberFormatException | NullPointerException e) {
+            log.error("Fail - number has illegal format: {}", e.getMessage());
             return true;
         }
-        return new BigDecimal(appConfig.get(INCREMENT)).compareTo(new BigDecimal(appConfig.get(MAXIMUM))) == 0;
     }
-
 
     private static boolean isAppSupportCyrillic(String propValue) {
         return propValue.equalsIgnoreCase(CORRECT_EXTERNAL) ||
@@ -47,6 +53,5 @@ public class Validation {
     private static boolean isAppNameNotTable(String propValue) {
         return propValue.equalsIgnoreCase(CORRECT_APP_NAME);
     }
-
 
 }
