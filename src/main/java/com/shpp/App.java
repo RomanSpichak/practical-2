@@ -13,13 +13,15 @@ public class App {
 
     public static void main(String[] args) {
 
-        HashMap<String, String> appConfig = Config.geAppConfig();
+        HashMap<String, String> appConfig = Config.getAppConfig();
 
         if (Validation.isNotValidProps(appConfig)){
             log.error("Some properties has illegal values: {}", appConfig);
             return;
         }
-        // make table numbers
+
+        StringBuilder table; // make table numbers
+
         // serialize to format
 
     }

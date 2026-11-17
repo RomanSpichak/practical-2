@@ -10,7 +10,6 @@ import java.util.Properties;
 
 public class Config {
 
-
     private static final Logger log = LoggerFactory.getLogger(Config.class);
     private static final String APPLICATION_PROPERTIES = "application.properties";
     private static final String FORMAT = "format";
@@ -18,9 +17,7 @@ public class Config {
     private static final String DEFAULT_FORMAT = "json";
     private static final String DEFAULT_TYPE = "int";
 
-
-    public static HashMap<String, String> geAppConfig() {
-
+    public static HashMap<String, String> getAppConfig() {
         Properties properties = new Properties();
         java.io.File external = new java.io.File(APPLICATION_PROPERTIES);
         if (external.exists()) {
@@ -47,14 +44,10 @@ public class Config {
         HashMap<String, String> map = new HashMap<>();
         properties.stringPropertyNames().forEach(
                 name -> map.put(name, properties.getProperty(name)));
-        map.put(FORMAT, System.getProperty(FORMAT, DEFAULT_FORMAT)); // add system props
+        map.put(FORMAT, System.getProperty(FORMAT, DEFAULT_FORMAT));
         map.put(TYPE, System.getProperty(TYPE, DEFAULT_TYPE));
         return map;
     }
 
-
-    public static void main(String[] args) {
-        System.out.println("map = " + Config.geAppConfig());
-    }
 
 }
