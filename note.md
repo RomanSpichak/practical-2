@@ -14,4 +14,3 @@ Validation
     Cyrillic format
     increment more zero? (bigDecimal через метод compare()equals нельзя) операторы == != > < може нельзя
     max > min
-
