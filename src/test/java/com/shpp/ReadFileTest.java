@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Properties;
 
-import static java.util.concurrent.CompletableFuture.anyOf;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ReadFileTest {
@@ -37,8 +36,8 @@ class ReadFileTest {
     @Test
     @DisplayName("Should return true if read Cyrillic alphabet")
     void shouldReturnTrueIfReadCyrillicAlphabet() {
-        boolean isExternal = properties.getProperty(GREETING).contains("зовнішнього");
-        boolean isInternal = properties.getProperty(GREETING).contains("внутрішнього");
+        boolean isExternal = properties.getProperty(GREETING).equalsIgnoreCase(EXTERNAL);
+        boolean isInternal = properties.getProperty(GREETING).equalsIgnoreCase(INTERNAL);
         assertTrue(isExternal || isInternal);
     }
 

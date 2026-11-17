@@ -4,5 +4,4 @@ target
 *.iml
 .DS_Store
 *.log
-src/main/java/com/shpp/v2_note.md
 practical-2.iml
