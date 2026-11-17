@@ -1,5 +1,5 @@
 App (main)
-    get map of prps
+    get map of props
     add system
     build table
     serialize to string
@@ -14,3 +14,4 @@ Validation
     Cyrillic format
     increment more zero? (bigDecimal через метод compare()equals нельзя) операторы == != > < може нельзя
     max > min
+
