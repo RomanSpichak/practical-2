@@ -15,13 +15,12 @@ public class App {
 
         HashMap<String, String> appConfig = Config.geAppConfig();
 
-        if (Validation.isValidProps(appConfig)){
-            // make table numbers
-            // serialize to format
-
-        } else {
-            // no valid
+        if (Validation.isNotValidProps(appConfig)){
+            log.error("Some properties has illegal values: {}", appConfig);
+            return;
         }
+        // make table numbers
+        // serialize to format
 
     }
 
