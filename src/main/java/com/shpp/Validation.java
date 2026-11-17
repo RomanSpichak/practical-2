@@ -4,7 +4,14 @@ import java.util.HashMap;
 
 public class Validation {
 
-    public static boolean isValidProps(HashMap<String, String> map) {
-        return false;
+    public static boolean isValidProps(HashMap<String, String> appConfig) {
+
+        boolean isValid = true;
+
+
+
+
+
+        return isValid;
     }
 }

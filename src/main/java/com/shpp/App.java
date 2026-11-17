@@ -15,11 +15,14 @@ public class App {
 
         HashMap<String, String> appConfig = Config.geAppConfig();
 
-//        String table = v2_TableBuilder.getTableInString(config);
+        if (Validation.isValidProps(appConfig)){
+            // make table numbers
+            // serialize to format
 
-//        String serialized = v2_SerializationString.getSerialized(table);
+        } else {
+            // no valid
+        }
 
-//        log.info(serialized);
     }
 
 
