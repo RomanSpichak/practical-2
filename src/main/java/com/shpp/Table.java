@@ -39,13 +39,13 @@ public class Table {
             double min = Double.parseDouble(appConfig.get(MINIMUM));
             double max = Double.parseDouble(appConfig.get(MAXIMUM));
             double inc = Double.parseDouble(appConfig.get(INCREMENT));
-            String patternTitle = getPatter(max) + "s";
-            String patternTable = getPatter(max) + "d";
+            String patternTitle = getPattern(max) + "s";
             builder.append(String.format(patternTitle, "type: ")).
                     append(String.format(patternTitle, type)).append("\n").
                     append(String.format(patternTitle, " min: ")).
                     append(String.format(patternTitle, min)).append("\n").
-                    append(" max: ").append(max).append("\n").
+                    append(String.format(patternTitle, " max: ")).
+                    append(String.format(patternTitle, max)).append("\n").
                     append(" inc: ").append(inc).append("\n").append("\n");
             List<Double> numbers = new ArrayList<>();
             for (double i = min; i <= max ; i = i + inc) {
@@ -53,9 +53,11 @@ public class Table {
                 min += inc;
             }
             if (numbers.isEmpty()) {
-                log.warn("List whit number to multiply is empty :{}", numbers);
+                log.error("List whit number to multiply is empty :{}", numbers);
+                return;
             }
 //            builder.append("\n").append(String.format(patternTitle, "build table ... ")).append("\n");
+            String patternTable = getPattern(max) + "d";
             addHeaderToTable(numbers, patternTitle, builder);
 
 
@@ -68,7 +70,7 @@ public class Table {
         numbers.forEach(number -> builder.append(String.format(patternTitle, number)));
     }
 
-    private static String getPatter(double max) {
+    private static String getPattern(double max) {
        double sum = max * max;
        String string = sum + "";
        int sizeMAX = string.length() + 2; // factorial
