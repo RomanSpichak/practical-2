@@ -46,7 +46,8 @@ public class Table {
                     append(String.format(patternTitle, min)).append("\n").
                     append(String.format(patternTitle, " max: ")).
                     append(String.format(patternTitle, max)).append("\n").
-                    append(" inc: ").append(inc).append("\n").append("\n");
+                    append(String.format(patternTitle, " inc: ")).
+                    append(String.format(patternTitle, inc)).append("\n").append("\n");
             List<Double> numbers = new ArrayList<>();
             for (double i = min; i <= max ; i = i + inc) {
                 numbers.add(min);
@@ -56,9 +57,10 @@ public class Table {
                 log.error("List whit number to multiply is empty :{}", numbers);
                 return;
             }
-//            builder.append("\n").append(String.format(patternTitle, "build table ... ")).append("\n");
             String patternTable = getPattern(max) + "d";
-            addHeaderToTable(numbers, patternTitle, builder);
+//            addHeaderToTable(numbers, patternTitle, builder);
+            numbers.forEach(number ->
+                    builder.append(String.format(patternTitle, number)));
 
 
         } catch (NumberFormatException e) {
