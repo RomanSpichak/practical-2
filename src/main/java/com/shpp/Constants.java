@@ -18,5 +18,10 @@ public final class Constants {
     static final String CORRECT_EXTERNAL = "Привіт з зовнішнього файлу";
     static final String CORRECT_INTERNAL = "Привіт з внутрішнього файлу";
     static final String USER_NAME = "user.name";
+    static final String SHORT = "short";
+    static final String INT = "int";
+    static final String LONG = "long";
+    static final String FLOAT = "float";
+    static final String DOUBLE = "double";
 
 }

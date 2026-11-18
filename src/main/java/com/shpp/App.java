@@ -4,7 +4,11 @@ package com.shpp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.swing.*;
 import java.util.HashMap;
+import java.util.Map;
+
+import static com.shpp.Constants.*;
 
 public class App {
 
@@ -14,17 +18,13 @@ public class App {
 
         HashMap<String, String> appConfig = Config.getAppConfig();
 
-        if (Validation.isNotValidProps(appConfig)) {
+        if (Validation.isValidProps(appConfig)) {
             log.error("Some properties has illegal values: {}", appConfig);
             return;
         }
+        StringBuilder builder = Table.getTable(appConfig);
 
-        StringBuilder numbersTable = BuildTable.getTableAsString(appConfig);
-
-        System.out.println("numbersTable = " + numbersTable);
-
-        String tableFormatDoc = DocFormat.getTableFormatDoc(numbersTable);
-
+        log.info(builder.toString());
     }
 
 

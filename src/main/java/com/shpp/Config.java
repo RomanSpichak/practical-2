@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import static com.shpp.Constants.*;
@@ -26,7 +27,7 @@ public class Config {
             log.debug("Application properties successful load from external file: {}", properties);
             return getMap(properties);
         }
-        try (InputStream internal = x_Main.class.getClassLoader().getResourceAsStream(APPLICATION_PROPERTIES)) {
+        try (InputStream internal = App.class.getClassLoader().getResourceAsStream(APPLICATION_PROPERTIES)) {
             if (internal != null) {
                 properties.load(new InputStreamReader(internal, StandardCharsets.UTF_8));
             }
@@ -42,7 +43,8 @@ public class Config {
         properties.stringPropertyNames().forEach(
                 name -> map.put(name, properties.getProperty(name)));
         map.put(FORMAT, System.getProperty(FORMAT, DEFAULT_FORMAT));
-        map.put(TYPE, System.getProperty(TYPE, DEFAULT_TYPE));
+//        map.put(TYPE, System.getProperty(TYPE, DEFAULT_TYPE));
+        map.put(TYPE, System.getProperty(TYPE, "double")); // to check method
         return map;
     }
 

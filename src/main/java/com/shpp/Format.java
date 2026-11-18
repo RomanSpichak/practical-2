@@ -1,6 +1,6 @@
 package com.shpp;
 
-public class DocFormat {
+public class Format {
     public static String getTableFormatDoc(StringBuilder numbersTable) {
 
         return null;
