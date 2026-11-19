@@ -14,14 +14,6 @@ public class App {
     public static void main(String[] args) {
 
         HashMap<String, String> appConfig = Config.getAppConfig();
-        if (appConfig.isEmpty()) {
-            log.error("Fail when making application config file");
-            return;
-        }
-        if (Validation.isValidProps(appConfig)) {
-            log.error("Some properties has illegal values: {}", appConfig);
-            return;
-        }
         StringBuilder builder = Table.getTable(appConfig);
         log.info(builder.toString());
 
