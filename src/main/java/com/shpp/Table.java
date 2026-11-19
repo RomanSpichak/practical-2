@@ -21,7 +21,7 @@ public class Table {
         StringBuilder builder = new StringBuilder("\n");
         builder.append(appConfig.get(GREETING)).append(" ").append(appConfig.get(USER_NAME)).append("\n");
         String type = appConfig.get(TYPE);
-        if (isFactorialTypeNumbers(type)) {
+        if (type.equalsIgnoreCase("double") || type.equalsIgnoreCase("float")) {
             getFactorialTableNumbers(builder, appConfig, type);
         } else {
             getIntegerTableNumbers(builder, appConfig, type);
@@ -81,10 +81,6 @@ public class Table {
         } catch (NumberFormatException e) {
             log.error("Error in parse string to number {}", e.getMessage());
         }
-    }
-
-    private static boolean isFactorialTypeNumbers(String type) {
-        return type.equalsIgnoreCase("double") || type.equalsIgnoreCase("float");
     }
 
 }
