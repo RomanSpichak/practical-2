@@ -36,7 +36,7 @@ public class Table {
             long max = Long.parseLong(appConfig.get(MAXIMUM));
             long inc = Long.parseLong(appConfig.get(INCREMENT));
             List<Long> numbers = new ArrayList<>();
-            for (double i = min; i <= max; i = i + inc) {
+            for (double i = min; i <= max; i += inc) {
                 numbers.add(min);
                 min += inc;
             }
@@ -44,6 +44,7 @@ public class Table {
             builder.append(String.format(pattern, type));
             numbers.forEach(number -> builder.append(String.format(pattern, number))); // add title row
             builder.append("\n");
+            
             numbers.forEach(row -> {
                 builder.append(String.format(pattern, row));
                 numbers.forEach(col -> {
@@ -63,7 +64,7 @@ public class Table {
             double max = Double.parseDouble(appConfig.get(MAXIMUM));
             double inc = Double.parseDouble(appConfig.get(INCREMENT));
             List<Double> numbers = new ArrayList<>();
-            for (double i = min; i <= max; i = i + inc) {
+            for (double i = min; i <= max; i += inc) {
                 numbers.add(min);
                 min += inc;
             }
@@ -71,6 +72,7 @@ public class Table {
             builder.append(String.format(pattern, type));
             numbers.forEach(number -> builder.append(String.format(pattern, number))); // add title row
             builder.append("\n");
+
             numbers.forEach(row -> {
                 builder.append(String.format(pattern, row));
                 numbers.forEach(col -> {

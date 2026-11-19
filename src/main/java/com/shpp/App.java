@@ -16,6 +16,7 @@ public class App {
         HashMap<String, String> appConfig = Config.getAppConfig();
         if (appConfig.isEmpty()) {
             log.error("Fail when making application config file");
+            return;
         }
         if (Validation.isValidProps(appConfig)) {
             log.error("Some properties has illegal values: {}", appConfig);

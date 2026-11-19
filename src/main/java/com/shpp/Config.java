@@ -23,7 +23,6 @@ public class Config {
             } catch (IOException e) {
                 log.error("Error - mistake at reading external file: {}", e.getMessage());
             }
-            log.debug("Application properties successful load from external file: {}", properties);
             return getMap(properties);
         }
         try (InputStream internal = App.class.getClassLoader().getResourceAsStream(APPLICATION_PROPERTIES)) {
@@ -33,7 +32,6 @@ public class Config {
         } catch (IOException e) {
             log.error("Error - mistake at reading internal file: {}", e.getMessage());
         }
-        log.debug("Application properties successful load from internal file: {}", properties);
         return getMap(properties);
     }
 
