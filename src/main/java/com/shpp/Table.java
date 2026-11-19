@@ -29,7 +29,8 @@ public class Table {
         return builder;
     }
 
-    private static void getIntegerTableNumbers(StringBuilder builder, HashMap<String, String> appConfig, String type) {
+    private static void getIntegerTableNumbers(StringBuilder builder, HashMap<String, String> appConfig,
+                                               String type) {
         try {
             long min = Long.parseLong(appConfig.get(MINIMUM));
             long max = Long.parseLong(appConfig.get(MAXIMUM));
@@ -38,10 +39,6 @@ public class Table {
             for (double i = min; i <= max; i = i + inc) {
                 numbers.add(min);
                 min += inc;
-            }
-            if (numbers.isEmpty()) {
-                log.error("List whit number to multiply is empty, check '.properties' file :{}", numbers);
-                return;
             }
             String pattern = getPattern(max);
             builder.append(String.format(pattern, type));
@@ -69,10 +66,6 @@ public class Table {
             for (double i = min; i <= max; i = i + inc) {
                 numbers.add(min);
                 min += inc;
-            }
-            if (numbers.isEmpty()) {
-                log.error("List whit number to multiply is empty, check '.properties' file :{}", numbers);
-                return;
             }
             String pattern = getPattern(max);
             builder.append(String.format(pattern, type));

@@ -4,7 +4,6 @@ package com.shpp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.swing.*;
 import java.util.HashMap;
 
 
@@ -17,7 +16,7 @@ public class App {
 
         HashMap<String, String> appConfig = Config.getAppConfig();
         if (appConfig.isEmpty()) {
-            log.error("Cant making application config file");
+            log.error("Fail when making application config file");
         }
         if (Validation.isValidProps(appConfig)) {
             log.error("Some properties has illegal values: {}", appConfig);
@@ -25,6 +24,7 @@ public class App {
         }
         StringBuilder builder = Table.getTable(appConfig);
         log.info(builder.toString());
+
     }
 
 }
