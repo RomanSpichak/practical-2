@@ -18,5 +18,6 @@ public final class Constants {
     static final String CORRECT_EXTERNAL = "Привіт з зовнішнього файлу";
     static final String CORRECT_INTERNAL = "Привіт з внутрішнього файлу";
     static final String USER_NAME = "user.name";
+    static final String PATTERN = "%10s";
 
 }

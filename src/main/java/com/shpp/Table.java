@@ -40,15 +40,14 @@ public class Table {
                 numbers.add(min);
                 min += inc;
             }
-            String pattern = "%10s";
-            builder.append(String.format(pattern, type));
-            numbers.forEach(number -> builder.append(String.format(pattern, number))); // add title row
+            builder.append(String.format(PATTERN, type));
+            numbers.forEach(number -> builder.append(String.format(PATTERN, number))); // add title row
             builder.append("\n");
             
             numbers.forEach(row -> {
-                builder.append(String.format(pattern, row));
+                builder.append(String.format(PATTERN, row));
                 numbers.forEach(col -> {
-                    builder.append(String.format(String.format(pattern, row * col))); // add table
+                    builder.append(String.format(String.format(PATTERN, row * col))); // add table
                 });
                 builder.append("\n");
             });
@@ -68,15 +67,14 @@ public class Table {
                 numbers.add(min);
                 min += inc;
             }
-            String pattern = "%10s";
-            builder.append(String.format(pattern, type));
-            numbers.forEach(number -> builder.append(String.format(pattern, number))); // add title row
+            builder.append(String.format(PATTERN, type));
+            numbers.forEach(number -> builder.append(String.format(PATTERN, number))); // add title row
             builder.append("\n");
 
             numbers.forEach(row -> {
-                builder.append(String.format(pattern, row));
+                builder.append(String.format(PATTERN, row));
                 numbers.forEach(col -> {
-                    builder.append(String.format(String.format(pattern, row * col))); // add table
+                    builder.append(String.format(String.format(PATTERN, row * col))); // add table
                 });
                 builder.append("\n");
             });
