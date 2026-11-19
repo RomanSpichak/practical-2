@@ -15,6 +15,7 @@ public class Config {
     private static final Logger log = LoggerFactory.getLogger(Config.class);
 
     public static HashMap<String, String> getAppConfig() {
+
         Properties properties = new Properties();
         java.io.File external = new java.io.File(APPLICATION_PROPERTIES);
         if (external.exists()) {
