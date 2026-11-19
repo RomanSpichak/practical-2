@@ -27,5 +27,4 @@ public class App {
         log.info(builder.toString());
     }
 
-
 }

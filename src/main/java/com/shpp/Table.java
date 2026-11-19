@@ -24,66 +24,82 @@ public class Table {
         if (isFactorialTypeNumbers(type)) {
             getFactorialTableNumbers(builder, appConfig, type);
         } else {
-            //
+            getIntegerTableNumbers(builder, appConfig, type);
         }
-
-
         return builder;
     }
 
-    private static void getFactorialTableNumbers(StringBuilder builder,
-                                                 HashMap<String, String> appConfig,
-                                                 String type) {
+    private static void getIntegerTableNumbers(StringBuilder builder, HashMap<String, String> appConfig, String type) {
         try {
-
-            double min = Double.parseDouble(appConfig.get(MINIMUM));
-            double max = Double.parseDouble(appConfig.get(MAXIMUM));
-            double inc = Double.parseDouble(appConfig.get(INCREMENT));
-            String patternTitle = getPattern(max) + "s";
-            builder.append(String.format(patternTitle, "type: ")).
-                    append(String.format(patternTitle, type)).append("\n").
-                    append(String.format(patternTitle, " min: ")).
-                    append(String.format(patternTitle, min)).append("\n").
-                    append(String.format(patternTitle, " max: ")).
-                    append(String.format(patternTitle, max)).append("\n").
-                    append(String.format(patternTitle, " inc: ")).
-                    append(String.format(patternTitle, inc)).append("\n").append("\n");
-            List<Double> numbers = new ArrayList<>();
-            for (double i = min; i <= max ; i = i + inc) {
+            long min = Long.parseLong(appConfig.get(MINIMUM));
+            long max = Long.parseLong(appConfig.get(MAXIMUM));
+            long inc = Long.parseLong(appConfig.get(INCREMENT));
+            List<Long> numbers = new ArrayList<>();
+            for (double i = min; i <= max; i = i + inc) {
                 numbers.add(min);
                 min += inc;
             }
             if (numbers.isEmpty()) {
-                log.error("List whit number to multiply is empty :{}", numbers);
+                log.error("List whit number to multiply is empty, check '.properties' file :{}", numbers);
                 return;
             }
-            String patternTable = getPattern(max) + "d";
-//            addHeaderToTable(numbers, patternTitle, builder);
-            numbers.forEach(number ->
-                    builder.append(String.format(patternTitle, number)));
-
-
+            String pattern = getPattern(max);
+            builder.append(String.format(pattern, type));
+            numbers.forEach(number -> builder.append(String.format(pattern, number))); // add title row
+            builder.append("\n");
+            numbers.forEach(row -> {
+                builder.append(String.format(pattern, row));
+                numbers.forEach(col -> {
+                    builder.append(String.format(String.format(pattern, row * col))); // add table
+                });
+                builder.append("\n");
+            });
         } catch (NumberFormatException e) {
             log.error("Error in parse string to number {}", e.getMessage());
         }
     }
 
-    private static void addHeaderToTable(List<Double> numbers, String patternTitle, StringBuilder builder) {
-        numbers.forEach(number -> builder.append(String.format(patternTitle, number)));
+    private static void getFactorialTableNumbers(StringBuilder builder, HashMap<String, String> appConfig,
+                                                 String type) {
+        try {
+            double min = Double.parseDouble(appConfig.get(MINIMUM));
+            double max = Double.parseDouble(appConfig.get(MAXIMUM));
+            double inc = Double.parseDouble(appConfig.get(INCREMENT));
+            List<Double> numbers = new ArrayList<>();
+            for (double i = min; i <= max; i = i + inc) {
+                numbers.add(min);
+                min += inc;
+            }
+            if (numbers.isEmpty()) {
+                log.error("List whit number to multiply is empty, check '.properties' file :{}", numbers);
+                return;
+            }
+            String pattern = getPattern(max);
+            builder.append(String.format(pattern, type));
+            numbers.forEach(number -> builder.append(String.format(pattern, number))); // add title row
+            builder.append("\n");
+            numbers.forEach(row -> {
+                builder.append(String.format(pattern, row));
+                numbers.forEach(col -> {
+                    builder.append(String.format(String.format(pattern, row * col))); // add table
+                });
+                builder.append("\n");
+            });
+        } catch (NumberFormatException e) {
+            log.error("Error in parse string to number {}", e.getMessage());
+        }
     }
 
     private static String getPattern(double max) {
        double sum = max * max;
        String string = sum + "";
-       int sizeMAX = string.length() + 2; // factorial
-       return "%" + sizeMAX;
+       int sizeMAX = string.length() + 2;
+       return "%" + sizeMAX + "s";
     }
-
 
     private static boolean isFactorialTypeNumbers(String type) {
         return type.equalsIgnoreCase(DOUBLE) || type.equalsIgnoreCase(FLOAT);
     }
-
 
 }
 

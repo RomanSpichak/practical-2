@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 
 import static com.shpp.Constants.*;
@@ -43,10 +42,8 @@ public class Config {
         properties.stringPropertyNames().forEach(
                 name -> map.put(name, properties.getProperty(name)));
         map.put(FORMAT, System.getProperty(FORMAT, DEFAULT_FORMAT));
-//        map.put(TYPE, System.getProperty(TYPE, DEFAULT_TYPE));
-        map.put(TYPE, System.getProperty(TYPE, "double")); // to check method
+        map.put(TYPE, System.getProperty(TYPE, DEFAULT_TYPE));
         return map;
     }
-
 
 }
