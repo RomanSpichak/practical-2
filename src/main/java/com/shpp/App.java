@@ -17,13 +17,14 @@ public class App {
     public static void main(String[] args) {
 
         HashMap<String, String> appConfig = Config.getAppConfig();
-
+        if (appConfig.isEmpty()) {
+            log.error("Cant making application config file");
+        }
         if (Validation.isValidProps(appConfig)) {
             log.error("Some properties has illegal values: {}", appConfig);
             return;
         }
         StringBuilder builder = Table.getTable(appConfig);
-
         log.info(builder.toString());
     }
 
