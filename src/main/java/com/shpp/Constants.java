@@ -5,9 +5,7 @@ public final class Constants {
     }
 
     static final String APPLICATION_PROPERTIES = "application.properties";
-    static final String FORMAT = "format";
     static final String TYPE = "type";
-    static final String DEFAULT_FORMAT = "json";
     static final String DEFAULT_TYPE = "int";
     static final String GREETING = "greeting";
     static final String INCREMENT = "increment";

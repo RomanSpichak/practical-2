@@ -40,7 +40,6 @@ public class Config {
         HashMap<String, String> map = new HashMap<>();
         properties.stringPropertyNames().forEach(
                 name -> map.put(name, properties.getProperty(name)));
-        map.put(FORMAT, System.getProperty(FORMAT, DEFAULT_FORMAT));
         map.put(TYPE, System.getProperty(TYPE, DEFAULT_TYPE));
         return map;
     }
