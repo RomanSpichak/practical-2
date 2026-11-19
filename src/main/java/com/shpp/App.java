@@ -14,9 +14,10 @@ public class App {
     public static void main(String[] args) {
 
         HashMap<String, String> appConfig = Config.getAppConfig();
-        StringBuilder builder = Table.getTable(appConfig);
-        log.info(builder.toString());
 
+        StringBuilder builder = Table.getTable(appConfig);
+
+        log.info(builder.toString());
     }
 
 }
