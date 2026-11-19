@@ -6,21 +6,13 @@
         <format>dir</format>
     </formats>
 
-<!--    <files>-->
-<!--        <file>-->
-<!--            <source>${project.build.directory}/${project.build.finalName}.jar</source>-->
-<!--        </file>-->
-<!--    </files>-->
+    <files>
+        <file>
+            <source>${project.build.directory}/${project.build.finalName}.jar</source>
+        </file>
+    </files>
 
     <dependencySets>
-<!--        <dependencySet>-->
-<!--            <outputDirectory>. /lib</outputDirectory>-->
-<!--            <useProjectArtifact>false</useProjectArtifact>-->
-<!--            <includes>-->
-<!--                <include>${project.artifactId}_${project.version}-${note}</include>-->
-<!--            </includes>-->
-<!--        </dependencySet>-->
-
         <dependencySet>
             <outputDirectory>/lib</outputDirectory>
             <useProjectArtifact>false</useProjectArtifact>
