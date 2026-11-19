@@ -9,7 +9,6 @@ public final class Constants {
     static final String TYPE = "type";
     static final String DEFAULT_FORMAT = "json";
     static final String DEFAULT_TYPE = "int";
-    static final String APP_NAME = "app.name";
     static final String GREETING = "greeting";
     static final String INCREMENT = "increment";
     static final String MINIMUM = "min.number";
