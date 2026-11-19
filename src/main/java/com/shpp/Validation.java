@@ -3,7 +3,6 @@ package com.shpp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.lang.management.MemoryManagerMXBean;
 import java.math.BigDecimal;
 import java.util.HashMap;
 
@@ -27,15 +26,14 @@ public class Validation {
 
     private static boolean isNumbersHasIllegalValues(HashMap<String, String> appConfig) {
         try {
-            BigDecimal increment = new BigDecimal(appConfig.get(INCREMENT));
-            BigDecimal minimum = new BigDecimal(appConfig.get(MINIMUM));
-            BigDecimal maximum = new BigDecimal(appConfig.get(MAXIMUM));
-            if (increment.signum() <= 0 ||
-                    maximum.signum() <= 0 ||
-                    minimum.signum() <= 0) {
+
+            double increment = Double.parseDouble(appConfig.get(INCREMENT));
+            double minimum = Double.parseDouble(appConfig.get(MINIMUM));
+            double maximum = Double.parseDouble(appConfig.get(MAXIMUM));
+            if (increment <= 0 || maximum <= 0 || minimum <= 0) {
                 return true;
             }
-            if (minimum.compareTo(maximum) == 0 || increment.compareTo(maximum) == 0) {
+            if (minimum == increment) {
                 return true;
             }
             return true;

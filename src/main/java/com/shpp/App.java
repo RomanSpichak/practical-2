@@ -6,9 +6,8 @@ import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import java.util.HashMap;
-import java.util.Map;
 
-import static com.shpp.Constants.*;
+
 
 public class App {
 
