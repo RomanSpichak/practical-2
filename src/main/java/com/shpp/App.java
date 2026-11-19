@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 
 
-
 public class App {
 
     private static final Logger log = LoggerFactory.getLogger(App.class);

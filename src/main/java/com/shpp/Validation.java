@@ -3,7 +3,6 @@ package com.shpp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.math.BigDecimal;
 import java.util.HashMap;
 
 import static com.shpp.Constants.*;
@@ -39,7 +38,7 @@ public class Validation {
             return true;
         } catch (NumberFormatException | NullPointerException e) {
             log.error("Fail - number has illegal format: {}", e.getMessage());
-            return true;
+            return false;
         }
     }
 
