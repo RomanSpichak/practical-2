@@ -18,7 +18,7 @@ public class Table {
 
     public static StringBuilder getTable(HashMap<String, String> appConfig) {
 
-        StringBuilder builder = new StringBuilder().append("\n");
+        StringBuilder builder = new StringBuilder("\n");
         builder.append(appConfig.get(GREETING)).append(" ").append(appConfig.get(USER_NAME)).append("\n");
         String type = appConfig.get(TYPE);
         if (isFactorialTypeNumbers(type)) {
@@ -40,7 +40,7 @@ public class Table {
                 numbers.add(min);
                 min += inc;
             }
-            String pattern = getPattern(max);
+            String pattern = "%10s";
             builder.append(String.format(pattern, type));
             numbers.forEach(number -> builder.append(String.format(pattern, number))); // add title row
             builder.append("\n");
@@ -68,7 +68,7 @@ public class Table {
                 numbers.add(min);
                 min += inc;
             }
-            String pattern = getPattern(max);
+            String pattern = "%10s";
             builder.append(String.format(pattern, type));
             numbers.forEach(number -> builder.append(String.format(pattern, number))); // add title row
             builder.append("\n");
@@ -85,15 +85,8 @@ public class Table {
         }
     }
 
-    private static String getPattern(double max) {
-       double sum = max * max;
-       String string = sum + "";
-       int sizeMAX = string.length() + 2;
-       return "%" + sizeMAX + "s";
-    }
-
     private static boolean isFactorialTypeNumbers(String type) {
-        return type.equalsIgnoreCase(DOUBLE) || type.equalsIgnoreCase(FLOAT);
+        return type.equalsIgnoreCase("double") || type.equalsIgnoreCase("float");
     }
 
 }
