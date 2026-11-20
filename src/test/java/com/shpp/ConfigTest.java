@@ -38,5 +38,11 @@ class ConfigTest {
         assertTrue(isCyrillic, "Application not support Cyrillic");
     }
 
+    @Test
+    @DisplayName("Should return valid port external 8888 or internal 88")
+    void shouldReturnCurrentPort() {
+        boolean isValidPort = map.get("port").equals("8888") || map.get("port").equals("88");
+        assertTrue(isValidPort, "Should port return external 8888 or internal 88");
+    }
 
 }
