@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,10 +16,10 @@ class TableTest {
 
     @BeforeEach
     void setUp() {
-        HashMap<String, String> map = Config.getAppConfig();
-        min = map.get("min.number");
-        max = map.get("max.number");
-        inc = map.get("increment");
+        Properties map = Config.getAppConfig();
+        min = map.getProperty("min.number");
+        max = map.getProperty("max.number");
+        inc = map.getProperty("increment");
     }
 
     @Test

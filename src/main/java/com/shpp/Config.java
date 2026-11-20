@@ -14,7 +14,7 @@ public class Config {
 
     private static final Logger log = LoggerFactory.getLogger(Config.class);
 
-    public static HashMap<String, String> getAppConfig() {
+    public static Properties getAppConfig() {
 
         Properties properties = new Properties();
         java.io.File external = new java.io.File(APPLICATION_PROPERTIES);
@@ -24,7 +24,7 @@ public class Config {
             } catch (IOException e) {
                 log.error("Error - mistake at reading external file: {}", e.getMessage());
             }
-            return getMap(properties);
+            return properties;
         }
         try (InputStream internal = App.class.getClassLoader().getResourceAsStream(APPLICATION_PROPERTIES)) {
             if (internal != null) {
@@ -33,15 +33,8 @@ public class Config {
         } catch (IOException e) {
             log.error("Error - mistake at reading internal file: {}", e.getMessage());
         }
-        return getMap(properties);
+        return properties;
     }
 
-    private static HashMap<String, String> getMap(Properties properties) {
-        HashMap<String, String> map = new HashMap<>();
-        properties.stringPropertyNames().forEach(
-                name -> map.put(name, properties.getProperty(name)));
-        map.put(TYPE, System.getProperty(TYPE, DEFAULT_TYPE));
-        return map;
-    }
 
 }
