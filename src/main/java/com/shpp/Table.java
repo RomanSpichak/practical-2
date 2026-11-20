@@ -36,7 +36,7 @@ public class Table {
             long max = Long.parseLong(appConfig.get(MAXIMUM));
             long inc = Long.parseLong(appConfig.get(INCREMENT));
             List<Long> numbers = new ArrayList<>();
-            for (double i = min; i <= max; i += inc) {
+            for (long i = min; i <= max; i += inc) {
                 numbers.add(min);
                 min += inc;
             }
