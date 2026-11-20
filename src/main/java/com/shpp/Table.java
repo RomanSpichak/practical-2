@@ -52,7 +52,7 @@ public class Table {
                 builder.append("\n");
             });
         } catch (NumberFormatException | NullPointerException e) {
-            log.error("Error in parse string to number {}", e.getMessage());
+            log.error("Error in parse string to long number {}", e.getMessage());
         }
     }
 
@@ -68,18 +68,18 @@ public class Table {
                 min += inc;
             }
             builder.append(String.format(PATTERN, type));
-            numbers.forEach(number -> builder.append(String.format(PATTERN, number))); // add title row
+            numbers.forEach(number -> builder.append(String.format(PATTERN, number)));
             builder.append("\n");
 
             numbers.forEach(row -> {
                 builder.append(String.format(PATTERN, row));
                 numbers.forEach(col -> {
-                    builder.append(String.format(String.format(PATTERN, row * col))); // add table
+                    builder.append(String.format(String.format(PATTERN, row * col)));
                 });
                 builder.append("\n");
             });
         } catch (NumberFormatException | NullPointerException e) {
-            log.error("Error in parse string to number {}", e.getMessage());
+            log.error("Error in parse string to double number {}", e.getMessage());
         }
     }
 
