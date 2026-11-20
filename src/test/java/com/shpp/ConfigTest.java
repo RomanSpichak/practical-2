@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -43,6 +44,27 @@ class ConfigTest {
     void shouldReturnCurrentPort() {
         boolean isValidPort = map.get("port").equals("8888") || map.get("port").equals("88");
         assertTrue(isValidPort, "Should port return external 8888 or internal 88");
+    }
+
+    @Test
+    @DisplayName("Should return exception if not numeric value of increment")
+    void shouldReturnExceptionIfNotNumericValueOfIncrement() {
+        String inc = map.get("increment");
+        assertDoesNotThrow(() -> new BigDecimal(inc), "The increment must be a numeric value");
+    }
+
+    @Test
+    @DisplayName("Should return exception if not numeric value of min.number")
+    void shouldReturnExceptionIfNotNumericValueOfMinNumber() {
+        String min = map.get("min.number");
+        assertDoesNotThrow(() -> new BigDecimal(min), "The minimum must be a numeric value");
+    }
+
+    @Test
+    @DisplayName("Should return exception if not numeric value of max.number")
+    void shouldReturnExceptionIfNotNumericValueOfMaxNumber() {
+        String max = map.get("max.number");
+        assertDoesNotThrow(() -> new BigDecimal(max), "The maximum must be a numeric");
     }
 
 }

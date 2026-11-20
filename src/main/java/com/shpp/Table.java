@@ -51,7 +51,7 @@ public class Table {
                 });
                 builder.append("\n");
             });
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException | NullPointerException e) {
             log.error("Error in parse string to number {}", e.getMessage());
         }
     }
@@ -78,7 +78,7 @@ public class Table {
                 });
                 builder.append("\n");
             });
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException | NullPointerException e) {
             log.error("Error in parse string to number {}", e.getMessage());
         }
     }
