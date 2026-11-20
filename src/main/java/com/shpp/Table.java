@@ -3,7 +3,6 @@ package com.shpp;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 
@@ -11,7 +10,6 @@ import static com.shpp.Constants.*;
 
 
 public class Table {
-
 
 
     public static StringBuilder getTable(Properties appConfig) {
