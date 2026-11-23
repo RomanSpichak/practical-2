@@ -5,7 +5,8 @@ public final class Constants {
     }
 
     static final String APPLICATION_PROPERTIES = "application.properties";
-    static final String TYPE = "type.number";
+    static final String TYPE = "type";
+    static final String TYPE_DEFAULT = "type.number";
     static final String GREETING = "greeting";
     static final String INCREMENT = "increment";
     static final String MINIMUM = "min.number";

@@ -22,7 +22,7 @@ public class Table {
         var max = new BigDecimal(appConfig.getProperty(MAXIMUM));
         var inc = new BigDecimal(appConfig.getProperty(INCREMENT));
 
-        String type = appConfig.getProperty(TYPE);
+        String type = System.getProperty(TYPE, appConfig.getProperty(TYPE_DEFAULT));
 
         builder.append(String.format(PATTERN, type));
 
