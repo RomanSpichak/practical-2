@@ -11,19 +11,25 @@ on:
 
 
 jobs:
-  java_version:
+
+  testing:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Java Version
-        run: java --version
+      - name: Run testing before run install
+        run: mvn clean test
 
 
-
-  maven-version:
+  install:
     runs-on: ubuntu-latest
-    needs: java_version
+    needs: testing
     steps:
-      - name: Print Maven Version
-        run: mvn --version
+      - name: Run instal after successful testing
+        run: mvn clean install
 
-      
+
+  run-app:
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - name: Run result of install
+        run: java -jar target/table_v.2.1-fat.jar
