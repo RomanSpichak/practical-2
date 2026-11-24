@@ -11,20 +11,19 @@ on:
 
 
 jobs:
-  testing:
+  java_version:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Print Hello message in testing
-        run: echo "Hello World from testing"
+      - name: Print Java Version
+        run: java --version
 
 
 
-  install:
+  maven-version:
     runs-on: ubuntu-latest
-    needs: testing
+    needs: java_version
     steps:
-      - name: Print Hello message in install
-        run: echo "Hello World from install"
+      - name: Print Maven Version
+        run: mvn --version
 
       
