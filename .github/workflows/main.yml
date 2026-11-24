@@ -1,0 +1,30 @@
+#---------------------
+# My first pipeline CI
+#---------------------
+
+name: my_first_pipeline_CI
+
+on:
+  push: 
+    branches:
+    - main
+
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Hello message in testing
+        run: echo "Hello World from testing"
+
+
+
+  install:
+    runs-on: ubuntu-latest
+    needs: testing
+    steps:
+      - name: Print Hello message in install
+        run: echo "Hello World from install"
+
+      
