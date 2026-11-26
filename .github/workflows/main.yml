@@ -25,7 +25,7 @@ jobs:
       - name: Clone repository to current VM
         uses: actions/checkout@v7
 
-      - name: Check current folder aftre clone
+      - name: Check current folder after clone
         run: ls
 
       - name: Run maven clean install
