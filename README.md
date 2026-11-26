@@ -1,5 +1,4 @@
-[![RESULT_OF_LAST_BUILD](https://github.com/RomanSpichak/practical-2/actions/workflows/main.yml/badge.svg)](https://github.com/RomanSpichak/practical-2/actions/workflows/main.yml)
-
+[![my_Java_Maven_pipeline_CI](https://github.com/RomanSpichak/practical-2/actions/workflows/main.yml/badge.svg)](https://github.com/RomanSpichak/practical-2/actions/workflows/main.yml)
 
 # Practical-2
 
