@@ -1,6 +1,6 @@
 #-----------------------------------------------*
 # My pipeline CI. Table of "Multiply Numbers"   *
-# Roman Spichak learning java at SHPP IT School *
+# Roman Spichak learning java at SHPP IT-School *
 #-----------------------------------------------*
 
 name: my_first_pipeline_CI
@@ -19,8 +19,8 @@ jobs:
       - name: Clone repo to current VM
         uses: actions/checkout@v7
 
-      - name: Run maven clean install
+      - name: Installing JAR (testing, then install)
         run: mvn clean install
 
-      - name: Check installing folder
+      - name: Printing table (Using Logger)
         run: java -jar target/table_v.2.1-fat.jar
