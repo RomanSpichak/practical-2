@@ -15,21 +15,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    
-      - name: Printing version of Java
-        run: java --version
-
-      - name: Printing version of Maven
-        run: mvn --version
 
       - name: Clone repository to current VM
         uses: actions/checkout@v7
-
-      - name: Check current folder after clone
-        run: ls
 
       - name: Run maven clean install
         run: mvn clean install
 
       - name: Check installing folder
-        run: ls
+        run: ls target/
