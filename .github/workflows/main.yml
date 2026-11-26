@@ -13,6 +13,7 @@ on:
 jobs:
   install:
     runs-on: ubuntu-latest
+    
     steps:
     
       - name: Printing version of Java
@@ -24,3 +25,8 @@ jobs:
       - name: Printing current folder
         run: ls -lh
 
+      - name: Clone repository to current VM
+         run: actions/checkout@v4
+
+      - name: Printing current folder aftre clone
+        run: ls -lh
