@@ -16,7 +16,7 @@ jobs:
 
     steps:
 
-      - name: Clone repository to current VM
+      - name: Clone repo to current VM
         uses: actions/checkout@v7
 
       - name: Run maven clean install
