@@ -1,7 +1,7 @@
-#---------------------
-# My first pipeline CI
-#---------------------
-# to run JAR - target/table_v.2.1-fat.jar
+#-----------------------------------------------*
+# My pipeline CI. Table of "Multiply Numbers"   *
+# Roman Spichak learning java at SHPP IT School *
+#-----------------------------------------------*
 
 name: my_first_pipeline_CI
 
