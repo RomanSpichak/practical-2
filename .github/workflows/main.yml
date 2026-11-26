@@ -22,11 +22,8 @@ jobs:
       - name: Printing version of Maven
         run: mvn --version
 
-      - name: Printing current folder
-        run: ls -lh
-
       - name: Clone repository to current VM
-        uses: actions/checkout@v1
+        uses: actions/checkout@v7
 
       - name: Printing current folder aftre clone
         run: ls -lh
