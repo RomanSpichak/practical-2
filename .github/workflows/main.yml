@@ -15,10 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-      - name: Printing versions of Java & Maven
-        run: |
-          java --version
-          maven --version
+      - name: Printing version of Java
+        run: java --version
+
+      - name: Printing version of Maven
+        run: mvn --version
 
       - name: Printing current folder
         run: ls -lh
