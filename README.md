@@ -1,8 +1,6 @@
 # Practical-2
-
-A modern Java learning project.
-
 [![my_Java_Maven_pipeline_CI](https://github.com/RomanSpichak/practical-2/actions/workflows/main.yml/badge.svg)](https://github.com/RomanSpichak/practical-2/actions/workflows/main.yml)
+A modern Java learning project.
 
 ## Description
 
