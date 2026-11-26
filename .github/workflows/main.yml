@@ -3,7 +3,7 @@
 # Roman Spichak learning java at SHPP IT-School *
 #-----------------------------------------------*
 
-name: my_first_pipeline_CI
+name: my_Java_Maven_pipeline_CI
 
 on:
   push: 
