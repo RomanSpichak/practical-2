@@ -1,6 +1,7 @@
 #---------------------
 # My first pipeline CI
 #---------------------
+# to run JAR - target/table_v.2.1-fat.jar
 
 name: my_first_pipeline_CI
 
@@ -9,27 +10,16 @@ on:
     branches:
     - main
 
-
 jobs:
-
-  testing:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run testing before run install
-        run: mvn clean test
-
-
   install:
     runs-on: ubuntu-latest
-    needs: testing
     steps:
-      - name: Run instal after successful testing
-        run: mvn clean install
+    
+      - name: Printing versions of Java & Maven
+        run: |
+          java --version
+          mnv --version
 
+      - name: Printing current folder
+        run: ls -lh
 
-  run-app:
-    runs-on: ubuntu-latest
-    needs: install
-    steps:
-      - name: Run result of install
-        run: java -jar target/table_v.2.1-fat.jar
