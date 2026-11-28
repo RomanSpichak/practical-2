@@ -10,13 +10,15 @@ public class App {
 
     private static final Logger log = LoggerFactory.getLogger(App.class);
 
-    static void main(String[] args) {
+    static void main() {
 
         Properties appConfig = Config.getAppConfig();
 
         StringBuilder builder = Table.getTable(appConfig);
 
-        log.info(builder.toString());
+        if (log.isInfoEnabled()) {
+            log.info(builder.toString());
+        }
 
     }
 

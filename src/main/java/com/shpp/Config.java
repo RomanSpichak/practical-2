@@ -13,6 +13,9 @@ public class Config {
 
     private static final Logger log = LoggerFactory.getLogger(Config.class);
 
+    private Config() {
+    }
+
     public static Properties getAppConfig() {
 
         Properties properties = new Properties();

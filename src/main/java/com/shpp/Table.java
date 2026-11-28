@@ -1,6 +1,5 @@
 package com.shpp;
 
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +10,8 @@ import static com.shpp.Constants.*;
 
 public class Table {
 
+    private Table() {
+    }
 
     public static StringBuilder getTable(Properties appConfig) {
 
